@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomenuk - Portfolio</title>
+    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    
+</head>
+<body>
+    <!-- Fondo dinámico -->
+    <div class="dynamic-background" id="dynamicBg"></div>
+
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="#">OmeñukP</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home" class="active">Inicio</a></li>
+                <li><a href="#about">Sobre mí</a></li>
+                <li><a href="#projects">Proyectos</a></li>
+                <li><a href="#contact">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Sección Hero -->
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1>Hola, soy <span class="highlight">Omeñuk Pablo</span></h1>
+                <p class="title">Desarrollador Full-Stack & Especialista en Sistemas</p>
+                <div class="typewriter-container">
+                    <div class="typewriter-text" id="typewriter"></div>
+                </div>
+                <div class="cta-buttons">
+                    <a href="#projects" class="btn primary-btn">Ver Proyectos</a>
+                    <a href="#contact" class="btn secondary-btn">Contactar</a>
+                </div>
+                <div class="social-links">
+                    <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Sobre Mí -->
+        <section id="about" class="section">
+            <h2 class="section-title">Sobre Mí</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Soy un desarrollador apasionado por crear soluciones tecnológicas que marquen la diferencia. Mi enfoque se centra en la simplicidad, la elegancia y la funcionalidad, siempre buscando la excelencia en cada proyecto.</p>
+                    <p>Con experiencia en desarrollo frontend, sistemas de seguridad, automatización y diseño de interfaces, me especializo en transformar ideas complejas en soluciones accesibles y eficientes.</p>
+                    <div class="skills">
+                        <h3>Especialidades</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Desarrollo Frontend</span>
+                            <span class="skill-tag">Sistemas de Seguridad</span>
+                            <span class="skill-tag">Automatización</span>
+                            <span class="skill-tag">Diseño UI/UX</span>
+                            <span class="skill-tag">ERPs</span>
+                            <span class="skill-tag">Sistemas de Mensajería</span>
+                        </div>
+                    </div>
+                    <a href="#" class="btn secondary-btn">Descargar CV</a>
+                </div>
+                <div class="about-stats">
+                    <div class="stat">
+                        <span class="stat-number">3+</span>
+                        <span class="stat-title">Años de Experiencia</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">15+</span>
+                        <span class="stat-title">Proyectos Completados</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-title">Clientes Satisfechos</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Proyectos -->
+        <section id="projects" class="section">
+            <h2 class="section-title">Mis Proyectos</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">
+                        <span>Sistema de Seguridad</span>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">Sistema de Autenticación Avanzado</h3>
+                        <p class="project-description">Plataforma de seguridad con autenticación multifactor, gestión de permisos y auditoría completa para empresas.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">React</span>
+                            <span class="project-tag">Node.js</span>
+                            <span class="project-tag">JWT</span>
+                            <span class="project-tag">OAuth</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" target="_blank" class="project-link">Ver Demo <i class="fas fa-external-link-alt"></i></a>
+                            <a href="#" target="_blank" class="project-link">GitHub <i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-image">
+                        <span>Automatización</span>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">Plataforma de Automatización</h3>
+                        <p class="project-description">Sistema de automatización de flujos de trabajo con interfaz intuitiva y integración con múltiples servicios.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Vue.js</span>
+                            <span class="project-tag">Python</span>
+                            <span class="project-tag">API</span>
+                            <span class="project-tag">Webhooks</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" target="_blank" class="project-link">Ver Demo <i class="fas fa-external-link-alt"></i></a>
+                            <a href="#" target="_blank" class="project-link">GitHub <i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-image">
+                        <span>ERP System</span>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">Sistema ERP Empresarial</h3>
+                        <p class="project-description">Solución completa de gestión empresarial con módulos de inventario, facturación y reporting avanzado.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Angular</span>
+                            <span class="project-tag">Express</span>
+                            <span class="project-tag">PostgreSQL</span>
+                            <span class="project-tag">Docker</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" target="_blank" class="project-link">Ver Demo <i class="fas fa-external-link-alt"></i></a>
+                            <a href="#" target="_blank" class="project-link">GitHub <i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Contacto -->
+        <section id="contact" class="section">
+            <h2 class="section-title">Contacto</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:pomenuk@ejemplo.com">pomenuk@ejemplo.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p>Disponible para proyectos remotos</p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <p>+1 (555) 123-4567</p>
+                    </div>
+                    <div class="social-links contact-social" style="margin-top: 2rem;">
+                        <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <form class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Nombre</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Mensaje</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn primary-btn">Enviar Mensaje</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 Primaxs. Todos los derechos reservados.</p>
+            <p>Diseñado con <span class="heart">♥</span> y atención al detalle</p>
+        </div>
+    </footer>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Sistema de cambio de fondo cada minuto (60000ms)
+            const backgroundElement = document.getElementById('dynamicBg');
+            const darkColorPalettes = [
+            // Paleta 1: Azules oscuros
+            'linear-gradient(45deg, #1a1a2e 0%, #16213e 25%, #0f3460 50%, #533a71 75%, #1a1a2e 100%)',
+            // Paleta 2: Grises oscuros
+            'linear-gradient(45deg, #2d3748 0%, #1a202c 25%, #2d3748 50%, #4a5568 75%, #2d3748 100%)',
+            // Paleta 3: Púrpuras oscuros
+            'linear-gradient(45deg, #1a202c 0%, #2d3748 25%, #4a5568 50%, #6b46c1 75%, #553c9a 100%)',
+            // Paleta 4: Verdes oscuros
+            'linear-gradient(45deg, #064e3b 0%, #065f46 25%, #047857 50%, #059669 75%, #064e3b 100%)',
+            // Paleta 5: Azul marino profundo
+            'linear-gradient(45deg, #0c4a6e 0%, #075985 25%, #0369a1 50%, #0284c7 75%, #0c4a6e 100%)',
+            // Paleta 6: Negro carbón
+            'linear-gradient(45deg, #0f172a 0%, #1e293b 25%, #334155 50%, #475569 75%, #0f172a 100%)',
+            // Paleta 7: Azul-verde oscuro
+            'linear-gradient(45deg, #134e4a 0%, #115e59 25%, #0f766e 50%, #0d9488 75%, #134e4a 100%)',
+            // Paleta 8: Índigo profundo
+            'linear-gradient(45deg, #1e1b4b 0%, #312e81 25%, #3730a3 50%, #4338ca 75%, #1e1b4b 100%)',
+            // Paleta 9: Verde esmeralda
+            'linear-gradient(45deg, #022c22 0%, #064e3b 25%, #065f46 50%, #047857 75%, #022c22 100%)',
+            // Paleta 10: Violeta oscuro
+            'linear-gradient(45deg, #581c87 0%, #6b21a8 25%, #7c2d92 50%, #8b5cf6 75%, #581c87 100%)'
+        ];
+            
+            let currentPaletteIndex = 0;
+            
+            function changeBackground() {
+                backgroundElement.style.background = darkColorPalettes[currentPaletteIndex];
+                currentPaletteIndex = (currentPaletteIndex + 1) % darkColorPalettes.length;
+            }
+            
+            // Cambiar fondo cada minuto
+            setInterval(changeBackground, 60000); // 60000ms = 1 minuto
+            
+            // Efecto máquina de escribir con 30 tipografías
+            const typewriterElement = document.getElementById('typewriter');
+            const texts = [
+                'Creo soluciones digitales elegantes y funcionales con enfoque en seguridad, automatización y experiencia de usuario excepcional.',
+                'Desarrollo sistemas innovadores que transforman ideas complejas en interfaces intuitivas y eficientes.',
+                'Especialista en crear experiencias digitales que combinan funcionalidad avanzada con diseño minimalista.',
+                'Construyo plataformas robustas de seguridad y automatización para empresas modernas.',
+                'Transformo procesos empresariales en soluciones tecnológicas elegantes y escalables.'
+            ];
+            
+            const fontClasses = [
+                'font-1', 'font-2', 'font-3', 'font-4', 'font-5', 'font-6', 'font-7', 'font-8', 'font-9', 'font-10',
+                'font-11', 'font-12', 'font-13', 'font-14', 'font-15', 'font-16', 'font-17', 'font-18', 'font-19', 'font-20',
+                'font-21', 'font-22', 'font-23', 'font-24', 'font-25', 'font-26', 'font-27', 'font-28', 'font-29', 'font-30'
+            ];
+            
+            let textIndex = 0;
+            let fontIndex = 0;
+            let charIndex = 0;
+            let isDeleting = false;
+            let isPaused = false;
+            
+            function typeWriter() {
+                const currentText = texts[textIndex];
+                const currentFont = fontClasses[fontIndex];
+                
+                // Cambiar fuente
+                typewriterElement.className = `typewriter-text ${currentFont}`;
+                
+                if (isPaused) {
+                    setTimeout(typeWriter, 2000);
+                    isPaused = false;
+                    return;
+                }
+                
+                if (isDeleting) {
+                    typewriterElement.textContent = currentText.substring(0, charIndex - 1);
+                    charIndex--;
+                } else {
+                    typewriterElement.textContent = currentText.substring(0, charIndex + 1);
+                    charIndex++;
+                }
+                
+                let typeSpeed = isDeleting ? 30 : 50;
+                
+                if (!isDeleting && charIndex === currentText.length) {
+                    isPaused = true;
+                    isDeleting = true;
+                } else if (isDeleting && charIndex === 0) {
+                    isDeleting = false;
+                    textIndex = (textIndex + 1) % texts.length;
+                    fontIndex = (fontIndex + 1) % fontClasses.length;
+                    typeSpeed = 500;
+                }
+                
+                setTimeout(typeWriter, typeSpeed);
+            }
+            
+            // Iniciar el efecto después de un pequeño delay
+            setTimeout(typeWriter, 1000);
+            
+            // Cambiar navbar al hacer scroll
+            window.addEventListener('scroll', function() {
+                const navbar = document.querySelector('.navbar');
+                
+                if (window.scrollY > 100) { // Cuando haga scroll hacia abajo
+                    // Navbar con fondo oscuro
+                    navbar.style.background = 'rgba(26, 26, 46, 0.95)';
+                    navbar.style.borderRadius = '0 0 20px 20px';
+                    navbar.style.backdropFilter = 'blur(20px)';
+                    
+                    // Enlaces con colores claros
+                    const navLinks = document.querySelectorAll('.nav-links a');
+                    navLinks.forEach(link => {
+                        link.style.color = 'rgba(255, 255, 255, 0.9)';
+                    });
+                    
+                    // Logo con color claro
+                    const logo = document.querySelector('.logo a');
+                    logo.style.color = 'rgba(255, 255, 255, 0.9)';
+                    
+                } else { // Cuando esté arriba
+                    // Navbar con fondo claro (original)
+                    navbar.style.background = 'rgba(255, 255, 255, 0.1)';
+                    navbar.style.borderRadius = '0';
+                    
+                    // Enlaces con colores originales
+                    const navLinks = document.querySelectorAll('.nav-links a');
+                    navLinks.forEach(link => {
+                        link.style.color = 'rgba(255, 255, 255, 0.8)';
+                    });
+                    
+                    // Logo con color original
+                    const logo = document.querySelector('.logo a');
+                    logo.style.color = 'rgba(255, 255, 255, 0.9)';
+                }
+            });
+            
+            // Smooth scrolling para navegación
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+            
+            // Actualizar navegación activa en scroll
+            window.addEventListener('scroll', function() {
+                const sections = document.querySelectorAll('section[id]');
+                const navLinks = document.querySelectorAll('.nav-links a');
+                
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop - 100;
+                    if (scrollY >= sectionTop) {
+                        current = section.getAttribute('id');
+                    }
+                });
+                
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href').substring(1) === current) {
+                        link.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
