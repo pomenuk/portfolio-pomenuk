@@ -410,7 +410,7 @@ section {
 
 .project-tag {
     padding: 5px 10px;
-    background-color: rgba(0, 123, 255, 0.1);
+    background-color: rgba(208, 216, 224, 0.1);
     color: var(--primary-color);
     border-radius: 15px;
     font-size: 0.8rem;
