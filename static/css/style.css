@@ -1314,3 +1314,21 @@ footer {
         transform: translateY(0);
     }
 }
+.nav-logo {
+    height: 35px; /* Ajusta según tu logo */
+    width: auto;
+    vertical-align: middle;
+    transition: all 0.3s ease; /* Para hacer el logo responsivo suavemente */
+}
+
+/* Para dispositivos móviles */
+@media (max-width: 768px) {
+    .nav-logo {
+        height: 30px; /* Un poco más pequeño en móviles */
+    }
+}
+
+/* Opcional: efecto hover */
+.logo a:hover .nav-logo {
+    transform: scale(1.05);
+}
