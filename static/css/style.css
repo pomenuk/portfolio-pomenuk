@@ -1315,7 +1315,7 @@ footer {
     }
 }
 .nav-logo {
-    height: 50px; /* Ajusta según tu logo */
+    height: 40px; /* Ajusta según tu logo */
     width: auto;
     vertical-align: middle;
     transition: all 0.3s ease; /* Para hacer el logo responsivo suavemente */
