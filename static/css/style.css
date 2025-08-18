@@ -1332,3 +1332,21 @@ footer {
 .logo a:hover .nav-logo {
     transform: scale(1.05);
 }
+/* Para pantallas muy pequeñas */
+@media (max-width: 480px) {
+    .nav-logo-full {
+        display: none;
+    }
+    .nav-logo-icon {
+        display: block;
+    }
+}
+
+@media (min-width: 481px) {
+    .nav-logo-full {
+        display: block;
+    }
+    .nav-logo-icon {
+        display: none;
+    }
+}
