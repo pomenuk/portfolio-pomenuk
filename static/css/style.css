@@ -123,12 +123,12 @@ section {
 }
 
 .primary-btn:hover {
-    background: var(--button-hover-bg); /* Negro */
-    color: var(--button-hover-text);    /* Verde */
-    border-color: var(--button-hover-border); /* Verde */
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(16, 185, 129, 0.4); /* Sombra verde */
-    text-shadow: 0 0 10px rgba(16, 185, 129, 0.6); /* Texto con glow verde */
+    background: #121212 !important; /* Negro */
+    color: #10b981 !important;      /* Verde */
+    border-color: #10b981 !important; /* Verde */
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 25px rgba(16, 185, 129, 0.4) !important; /* Sombra verde */
+    text-shadow: 0 0 10px rgba(16, 185, 129, 0.6) !important; /* Texto con glow verde */
 }
 
 .secondary-btn {
@@ -653,6 +653,9 @@ footer {
     --background: #ffffff;
     --surface: #f8fafc;
     --border: #e2e8f0;
+    --button-hover-bg: #121212;     /* Color negro para el hover */
+    --button-hover-text: #10b981;   /* Color verde para el texto en hover */
+    --button-hover-border: #10b981;
     --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
     --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
@@ -968,11 +971,6 @@ body {
     background: rgba(37, 99, 235, 0.3);
 }
 
-.primary-btn:hover {
-    background: rgba(37, 99, 235, 0.5);
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(37, 99, 235, 0.4);
-}
 
 .secondary-btn:hover {
     background: rgba(255, 255, 255, 0.2);
