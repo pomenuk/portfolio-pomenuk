@@ -37,13 +37,25 @@
                 <div class="tech-name-container">
                 <div class="circuit-lines"></div>
                 <div class="name-3d-wrapper">
-                    <div class="name-glitch" data-text="Omeñuk">Omeñuk</div>
-                    <div class="surname-wrapper"></div>
-                    <div class="surname-glitch" data-text="Pablo">Pablo</div>
-                    <div class="tech-tag">FULL-STACK DEV</div>
+                    <!-- El contenedor que alterna entre glitch y elegante -->
+                    <div id="nameContainer" class="name-container">
+                    <!-- Versión glitch -->
+                    <div class="name-glitch-version">
+                        <div class="name-glitch" data-text="Omeñuk">Omeñuk</div>
+                        <div class="surname-glitch" data-text="Pablo">Pablo</div>
+                    </div>
+                    
+                    <!-- Versión elegante (inicialmente oculta) -->
+                    <div class="name-elegant-version">
+                        <div class="first-name">Omeñuk</div>
+                        <div class="last-name">Pablo</div>
+                    </div>
+                    </div>
                 </div>
                 <div class="binary-overlay"></div>
                 <div class="data-particles"></div>
+                <!-- Cartelito reubicado debajo del nombre -->
+                <div class="tech-tag">FULL-STACK DEV</div>
                 </div>
                 <div class="typewriter-container">
                     <div class="typewriter-text" id="typewriter"></div>
@@ -212,15 +224,27 @@
     </style>
 
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-        const particlesContainer = document.querySelector('.data-particles');
-        const containerWidth = particlesContainer.offsetWidth;
-        const containerHeight = particlesContainer.offsetHeight;
+        document.addEventListener('DOMContentLoaded', function() {
+        // Alternar entre los estilos cada 30 segundos
+        const nameContainer = document.getElementById('nameContainer');
+        const glitchVersion = nameContainer.querySelector('.name-glitch-version');
+        const elegantVersion = nameContainer.querySelector('.name-elegant-version');
         
-        // Crear partículas de datos
-        for (let i = 0; i < 30; i++) {
-            createDataParticle(particlesContainer, containerWidth, containerHeight);
+        function toggleNameStyle() {
+            // Si el glitch está visible, mostrar versión elegante
+            if (glitchVersion.style.opacity === '1' || glitchVersion.style.opacity === '') {
+            glitchVersion.style.opacity = '0';
+            elegantVersion.style.opacity = '1';
+            } 
+            // Si la versión elegante está visible, mostrar glitch
+            else {
+            glitchVersion.style.opacity = '1';
+            elegantVersion.style.opacity = '0';
+            }
         }
+        
+        // Cambiar cada 30 segundos
+        setInterval(toggleNameStyle, 30000);
         
         // Hacer que el nombre reaccione al movimiento del ratón
         const nameWrapper = document.querySelector('.name-3d-wrapper');
