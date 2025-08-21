@@ -1259,3 +1259,44 @@ footer {
 .name-3d-wrapper:hover {
   transform: perspective(800px) rotateX(10deg) translateY(-5px);
 }
+/* Asegurar centrado completo del nombre en ambos estados */
+.name-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.name-glitch-version, .name-elegant-version {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  transition: opacity 1s ease;
+}
+
+.name-wrapper {
+  display: flex;
+  align-items: center;
+  position: relative;
+  gap: 20px; /* Espacio entre Omeñuk y Pablo */
+  justify-content: center;
+}
+
+/* Mover el tag más a la derecha */
+.tech-tag {
+  position: absolute;
+  top: -15px;
+  right: 0;
+  transform: translateX(0%); /* Eliminado el desplazamiento hacia la izquierda */
+  background: rgba(18, 18, 18, 0.8);
+  color: #10b981;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 3px 8px;
+  border-radius: 4px;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  letter-spacing: 1px;
+  z-index: 20;
+}
