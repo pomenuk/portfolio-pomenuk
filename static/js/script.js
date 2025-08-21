@@ -43,11 +43,25 @@ document.addEventListener('DOMContentLoaded', function() {
     
     if (typewriterElement) {
         const texts = [
-            'Creo soluciones digitales elegantes y funcionales con enfoque en seguridad, automatización y experiencia de usuario excepcional.',
-            'Desarrollo sistemas innovadores que transforman ideas complejas en interfaces intuitivas y eficientes.',
-            'Especialista en crear experiencias digitales que combinan funcionalidad avanzada con diseño minimalista.',
-            'Construyo plataformas robustas de seguridad y automatización para empresas modernas.',
-            'Transformo procesos empresariales en soluciones tecnológicas elegantes y escalables.'
+            'Implemento arquitecturas de seguridad avanzada que protegen datos críticos sin comprometer la experiencia del usuario.',
+
+            'Diseño flujos de trabajo automatizados que reducen tiempos operativos y maximizan la productividad empresarial.',
+
+            'Convierto requisitos complejos en soluciones técnicas escalables adaptadas a las necesidades específicas de cada cliente.',
+
+            'Optimizo la interacción entre sistemas para crear ecosistemas digitales que comunican información de manera eficiente.',
+
+            'Desarrollo interfaces minimalistas pero potentes que equilibran perfectamente funcionalidad y simplicidad visual.',
+
+            'Creo estructuras de datos inteligentes que transforman la información en conocimiento accionable para las organizaciones.',
+
+            'Integro tecnologías emergentes en sistemas existentes para potenciar capacidades sin interrumpir operaciones.',
+
+            'Construyo puentes entre departamentos técnicos y no técnicos mediante soluciones que todos pueden entender y utilizar.',
+
+            'Transformo visiones abstractas en arquitecturas tangibles que resuelven desafíos empresariales reales.',
+
+            'Diseño experiencias digitales centradas en el usuario que generan engagement y convierten visitantes en clientes.'
         ];
         
         const fontClasses = [
