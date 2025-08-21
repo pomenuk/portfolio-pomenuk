@@ -1286,7 +1286,7 @@ footer {
 /* Mover el tag más a la derecha */
 .tech-tag {
   position: absolute;
-  top: -15px;
+  top: -20px;
   right: 0;
   transform: translateX(0%); /* Eliminado el desplazamiento hacia la izquierda */
   background: rgba(18, 18, 18, 0.8);
