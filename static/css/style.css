@@ -1794,3 +1794,98 @@ footer {
   z-index: 2;
   overflow: hidden;
 }
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&family=Quicksand:wght@400;600&family=Raleway:wght@300;400;700&display=swap');
+
+.tech-name-container {
+  position: relative;
+  width: 100%;
+  padding: 2rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.name-elegant-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  position: relative;
+  z-index: 10;
+  transition: all 0.3s ease;
+}
+
+.first-name, .last-name {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;  /* Light weight for elegance */
+  font-size: 3.5rem;
+  letter-spacing: 3px;
+  color: #ffffff;
+  text-shadow: 0 0 20px rgba(16, 185, 129, 0.4);
+  transition: all 0.3s ease;
+}
+
+/* Efecto hover sutil para el nombre */
+.name-elegant-wrapper:hover .first-name,
+.name-elegant-wrapper:hover .last-name {
+  letter-spacing: 4px;
+  text-shadow: 0 0 25px rgba(16, 185, 129, 0.6);
+  transform: translateY(-2px);
+}
+
+.last-name {
+  font-weight: 500;  /* Medium weight para el apellido, crea contraste */
+}
+
+/* Contenedor del separador con suave animación */
+.name-separator {
+  width: 60px;
+  height: 50px;
+  position: relative;
+  opacity: 0.8;
+  transition: all 0.3s ease;
+}
+
+.name-elegant-wrapper:hover .name-separator {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+/* Animación sutil para las líneas del circuito */
+.circuit-path {
+  fill: none;
+  stroke: #10b981;
+  stroke-width: 1.5;
+  stroke-dasharray: 200;
+  stroke-dashoffset: 200;
+  animation: drawCircuit 4s forwards infinite alternate;
+}
+
+@keyframes drawCircuit {
+  to { stroke-dashoffset: 0; }
+}
+
+/* Etiqueta profesional */
+.tech-tag {
+  position: relative;
+  margin-top: 10px;
+  background: rgba(18, 18, 18, 0.6);
+  color: #10b981;
+  font-family: 'Raleway', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 400;
+  padding: 4px 12px;
+  border-radius: 4px;
+  letter-spacing: 2px;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  text-shadow: 0 0 10px rgba(16, 185, 129, 0.4);
+  transform: translateY(10px);
+  opacity: 0.8;
+  transition: all 0.3s ease;
+}
+
+.tech-name-container:hover .tech-tag {
+  opacity: 1;
+  transform: translateY(5px);
+}
