@@ -117,8 +117,12 @@ section {
 }
 
 .primary-btn:hover {
-    background-color: transparent;
-    color: var(--primary-color);
+    background: var(--button-hover-bg); /* Negro */
+    color: var(--button-hover-text);    /* Verde */
+    border-color: var(--button-hover-border); /* Verde */
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(16, 185, 129, 0.4); /* Sombra verde */
+    text-shadow: 0 0 10px rgba(16, 185, 129, 0.6); /* Texto con glow verde */
 }
 
 .secondary-btn {
