@@ -37,9 +37,33 @@
                 <div class="tech-name-container">
                 <div class="circuit-lines"></div>
                 <div class="name-3d-wrapper">
-                    <div class="name-glitch" data-text="Omeñuk">Omeñuk</div>
+                    <div class="name-dynamic-glitch" id="firstName">PABLO</div>
+                    <div class="name-separator">
+                    <svg viewBox="0 0 60 30">
+                        <!-- Núcleo de Datos -->
+                        <circle cx="30" cy="15" r="8" fill="none" stroke="#10b981" stroke-width="1" />
+                        <circle cx="30" cy="15" r="4" fill="none" stroke="#10b981" stroke-width="0.7" />
+                        <circle cx="30" cy="15" r="1" fill="#10b981" />
+                        
+                        <!-- Líneas radiantes -->
+                        <line x1="30" y1="7" x2="30" y2="3" stroke="#10b981" stroke-width="0.7" />
+                        <line x1="30" y1="23" x2="30" y2="27" stroke="#10b981" stroke-width="0.7" />
+                        <line x1="22" y1="15" x2="18" y2="15" stroke="#10b981" stroke-width="0.7" />
+                        <line x1="38" y1="15" x2="42" y2="15" stroke="#10b981" stroke-width="0.7" />
+                        
+                        <!-- Líneas diagonales -->
+                        <line x1="25.5" y1="10.5" x2="22.5" y2="7.5" stroke="#10b981" stroke-width="0.7" />
+                        <line x1="34.5" y1="10.5" x2="37.5" y2="7.5" stroke="#10b981" stroke-width="0.7" />
+                        <line x1="25.5" y1="19.5" x2="22.5" y2="22.5" stroke="#10b981" stroke-width="0.7" />
+                        <line x1="34.5" y1="19.5" x2="37.5" y2="22.5" stroke="#10b981" stroke-width="0.7" />
+                        
+                        <!-- Conexiones principales -->
+                        <line x1="0" y1="15" x2="18" y2="15" stroke="#10b981" stroke-width="1" class="circuit-path" />
+                        <line x1="42" y1="15" x2="60" y2="15" stroke="#10b981" stroke-width="1" class="circuit-path" />
+                    </svg>
+                    </div>
                     <div class="surname-wrapper">
-                    <div class="surname-glitch" data-text="Pablo">Pablo</div>
+                    <div class="surname-dynamic-glitch" id="lastName">OMEÑUK</div>
                     <div class="tech-tag">FULL-STACK DEV</div>
                     </div>
                 </div>
@@ -214,22 +238,100 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+        // Elements to apply glitch effects to
+        const firstName = document.getElementById('firstName');
+        const lastName = document.getElementById('lastName');
+        
+        // Store the original text
+        const firstNameText = firstName.textContent;
+        const lastNameText = lastName.textContent;
+        
+        // Set data attributes for glitch effects
+        firstName.setAttribute('data-text', firstNameText);
+        lastName.setAttribute('data-text', lastNameText);
+        
+        // Different style classes to cycle through
+        const styleClasses = [
+            'style-normal',
+            'style-glitch',
+            'style-compressed',
+            'style-expanded',
+            'style-digital',
+            'style-error'
+        ];
+        
+        // Create data particles
         const particlesContainer = document.querySelector('.data-particles');
         const containerWidth = particlesContainer.offsetWidth;
         const containerHeight = particlesContainer.offsetHeight;
         
-        // Crear partículas de datos
         for (let i = 0; i < 30; i++) {
             createDataParticle(particlesContainer, containerWidth, containerHeight);
         }
         
-        // Hacer que el nombre reaccione al movimiento del ratón
+        // Make name react to mouse movement
         const nameWrapper = document.querySelector('.name-3d-wrapper');
         document.addEventListener('mousemove', (e) => {
             const xAxis = (window.innerWidth / 2 - e.pageX) / 25;
             const yAxis = (window.innerHeight / 2 - e.pageY) / 25;
             nameWrapper.style.transform = `perspective(800px) rotateY(${xAxis}deg) rotateX(${-yAxis}deg) translateY(-5px)`;
         });
+        
+        // Apply glitch effects at random intervals
+        function glitchLoop() {
+            // For first name
+            cycleStyles(firstName);
+            
+            // For last name (with slight delay)
+            setTimeout(() => {
+            cycleStyles(lastName);
+            }, 200);
+            
+            // Schedule next glitch effect
+            setTimeout(glitchLoop, 3000 + Math.random() * 2000);
+        }
+        
+        function cycleStyles(element) {
+            // Original state
+            const originalClasses = element.className;
+            
+            // Create glitch timeline
+            const timeline = [];
+            
+            // Add random style changes to timeline
+            for (let i = 0; i < 5; i++) {
+            const randomStyle = styleClasses[Math.floor(Math.random() * styleClasses.length)];
+            const delay = 100 + Math.random() * 200;
+            const duration = 80 + Math.random() * 120;
+            
+            timeline.push({
+                style: randomStyle,
+                time: delay
+            });
+            
+            timeline.push({
+                style: 'style-normal',
+                time: delay + duration
+            });
+            }
+            
+            // Execute the timeline
+            let totalDelay = 0;
+            timeline.forEach(step => {
+            setTimeout(() => {
+                element.className = `name-dynamic-glitch ${step.style}`;
+            }, totalDelay);
+            totalDelay += step.time;
+            });
+            
+            // Eventually return to original state
+            setTimeout(() => {
+            element.className = originalClasses;
+            }, totalDelay + 500);
+        }
+        
+        // Start the glitch loop after a short delay
+        setTimeout(glitchLoop, 1000);
         });
 
         function createDataParticle(container, width, height) {
@@ -246,31 +348,20 @@
             left: ${Math.random() * width}px;
             opacity: ${Math.random() * 0.8 + 0.2};
             box-shadow: 0 0 ${size + 2}px rgba(16, 185, 129, 0.7);
-            animation: particleFloat ${Math.random() * 6 + 4}s linear infinite;
         `;
         
         const animationDuration = Math.random() * 6 + 4;
         const xMovement = (Math.random() - 0.5) * width * 0.3;
         const yMovement = (Math.random() - 0.5) * height * 0.3;
         
-        const keyframes = `
-            @keyframes particleFloat${animationDuration} {
-            0%, 100% {
-                transform: translate(0, 0);
-                opacity: ${Math.random() * 0.5 + 0.3};
-            }
-            50% {
-                transform: translate(${xMovement}px, ${yMovement}px);
-                opacity: ${Math.random() * 0.8 + 0.2};
-            }
-            }
-        `;
-        
-        const style = document.createElement('style');
-        style.innerHTML = keyframes;
-        document.head.appendChild(style);
-        
-        particle.style.animation = `particleFloat${animationDuration} ${animationDuration}s ease-in-out infinite`;
+        particle.animate([
+            { transform: 'translate(0, 0)', opacity: Math.random() * 0.5 + 0.3 },
+            { transform: `translate(${xMovement}px, ${yMovement}px)`, opacity: Math.random() * 0.8 + 0.2 },
+            { transform: 'translate(0, 0)', opacity: Math.random() * 0.5 + 0.3 }
+        ], {
+            duration: animationDuration * 1000,
+            iterations: Infinity
+        });
         
         container.appendChild(particle);
         }
