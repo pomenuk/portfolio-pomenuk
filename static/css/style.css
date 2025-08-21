@@ -1296,7 +1296,6 @@ footer {
   font-weight: 500;
   padding: 3px 8px;
   border-radius: 4px;
-  border: 1px solid rgba(16, 185, 129, 0.3);
   letter-spacing: 1px;
   z-index: 20;
 }
