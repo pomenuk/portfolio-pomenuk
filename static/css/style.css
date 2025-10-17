@@ -1411,3 +1411,249 @@ textarea:focus,
 #about .section-title::after {
     background: linear-gradient(90deg, #000000, #374151); /* Línea en negro degradado */
 }
+/* About section con alineación perfecta */
+.about-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: var(--space-3xl);
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: stretch; /* Cambio clave: stretch en lugar de start */
+}
+
+.about-text {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Asegurar que tome toda la altura disponible */
+}
+
+/* Contenedor de párrafos */
+.about-paragraphs {
+    flex: 0 0 auto; /* No crece ni se encoge */
+    margin-bottom: var(--space-lg);
+}
+
+/* Texto principal en negro con tipografía minimalista */
+.about-text p {
+    font-size: 1.125rem;
+    color: #000000;
+    margin-bottom: var(--space-lg);
+    line-height: 1.8;
+    font-weight: 300;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    letter-spacing: 0.01em;
+}
+
+.about-text p:first-child {
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin-bottom: 1.5rem;
+}
+
+.about-text p:last-of-type {
+    margin-bottom: 0; /* Eliminar margen del último párrafo */
+}
+
+/* Skills box que se expande para igualar altura */
+.skills {
+    flex: 1; /* Esto hace que crezca para llenar el espacio disponible */
+    margin: var(--space-xl) 0;
+    padding: var(--space-xl);
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: var(--radius-lg);
+    border: 1px solid #e5e7eb;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Distribuir contenido uniformemente */
+}
+
+.skills h3 {
+    font-size: 1.25rem;
+    font-weight: 500;
+    margin-bottom: var(--space-md);
+    color: #000000;
+    letter-spacing: -0.01em;
+    font-family: 'Inter', sans-serif;
+    flex: 0 0 auto; /* No crece */
+}
+
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+    flex: 1; /* Crece para llenar espacio */
+    align-content: flex-start; /* Alinear contenido al inicio */
+    margin-bottom: var(--space-lg);
+}
+
+.skill-tag {
+    padding: var(--space-sm) var(--space-md);
+    background: rgba(16, 185, 129, 0.08);
+    color: #065f46;
+    border-radius: var(--radius-sm);
+    font-size: 0.875rem;
+    font-weight: 400;
+    font-family: 'Inter', sans-serif;
+    border: 1px solid rgba(16, 185, 129, 0.15);
+    transition: var(--transition-normal);
+    letter-spacing: 0.01em;
+    height: fit-content; /* Altura automática */
+}
+
+.skill-tag:hover {
+    background: rgba(16, 185, 129, 0.12);
+    color: #047857;
+    transform: translateY(-1px);
+    border-color: rgba(16, 185, 129, 0.25);
+}
+
+/* Botón que se queda al final */
+.cv-button-container {
+    flex: 0 0 auto; /* No crece ni se encoge */
+    margin-top: auto; /* Se empuja hacia abajo */
+    padding-top: var(--space-md);
+}
+
+.about-text .btn {
+    background: transparent;
+    color: #000000;
+    border: 1.5px solid #000000;
+    font-weight: 400;
+    font-family: 'Inter', sans-serif;
+    letter-spacing: 0.02em;
+    padding: 0.75rem 1.5rem;
+    width: fit-content;
+}
+
+.about-text .btn:hover {
+    background: #000000;
+    color: #ffffff;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Stats container que iguala altura */
+.about-stats {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+    height: 100%; /* Tomar toda la altura disponible */
+}
+
+.stat {
+    text-align: center;
+    padding: var(--space-xl);
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: var(--radius-md);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    transition: var(--transition-normal);
+    border: 1px solid #f3f4f6;
+    flex: 1; /* Cada stat crece igualmente */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centrar contenido verticalmente */
+}
+
+.stat:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+.stat-number {
+    display: block;
+    font-size: 2.25rem;
+    font-weight: 600;
+    color: var(--accent-color);
+    margin-bottom: var(--space-sm);
+    letter-spacing: -0.02em;
+    font-family: 'Inter', sans-serif;
+}
+
+.stat-title {
+    color: #374151;
+    font-weight: 400;
+    font-size: 0.9rem;
+    letter-spacing: 0.01em;
+    font-family: 'Inter', sans-serif;
+}
+
+/* Responsive mantiene la alineación */
+@media screen and (max-width: 1024px) {
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: var(--space-xl);
+        align-items: stretch;
+    }
+    
+    .about-stats {
+        grid-template-columns: repeat(3, 1fr);
+        flex-direction: row;
+        height: auto; /* Reset altura en responsive */
+    }
+    
+    .about-text {
+        height: auto; /* Reset altura en responsive */
+    }
+    
+    .skills {
+        flex: none; /* Reset flex en responsive */
+    }
+    
+    .about-text p {
+        font-size: 1.1rem;
+    }
+    
+    .about-text p:first-child {
+        font-size: 1.15rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .about-stats {
+        grid-template-columns: 1fr;
+        flex-direction: column;
+    }
+    
+    .about-text p {
+        font-size: 1rem;
+        line-height: 1.7;
+    }
+    
+    .about-text p:first-child {
+        font-size: 1.1rem;
+    }
+    
+    .skills {
+        padding: var(--space-lg);
+    }
+    
+    .stat {
+        padding: var(--space-lg);
+        flex: none; /* Reset flex en móvil */
+    }
+    
+    .stat-number {
+        font-size: 2rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .about-text p {
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+    
+    .about-text p:first-child {
+        font-size: 1rem;
+    }
+    
+    .skills h3 {
+        font-size: 1.1rem;
+    }
+    
+    .skill-tag {
+        font-size: 0.8rem;
+        padding: 0.4rem 0.8rem;
+    }
+}
