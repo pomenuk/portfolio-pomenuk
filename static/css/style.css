@@ -1193,3 +1193,221 @@ textarea:focus,
 .stat {
     will-change: transform;
 }
+/* About section con tipografía minimalista y texto negro */
+.about-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: var(--space-3xl);
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: start;
+}
+
+.about-text {
+    position: relative;
+}
+
+/* Texto principal en negro con tipografía minimalista */
+.about-text p {
+    font-size: 1.125rem;
+    color: #000000; /* Negro puro */
+    margin-bottom: var(--space-lg);
+    line-height: 1.8; /* Más espaciado para mejor legibilidad */
+    font-weight: 300; /* Peso más ligero para look minimalista */
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    letter-spacing: 0.01em; /* Espaciado sutil entre letras */
+}
+
+/* Párrafos con mejor jerarquía visual */
+.about-text p:first-child {
+    font-size: 1.2rem; /* Primer párrafo ligeramente más grande */
+    font-weight: 400;
+    margin-bottom: 1.5rem;
+}
+
+.about-text p:last-of-type {
+    margin-bottom: 2rem;
+}
+
+.skills {
+    margin: var(--space-xl) 0;
+    padding: var(--space-xl);
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: var(--radius-lg);
+    border: 1px solid #e5e7eb; /* Borde más sutil */
+}
+
+/* Título de especialidades en negro minimalista */
+.skills h3 {
+    font-size: 1.25rem;
+    font-weight: 500; /* Peso medio para minimalismo */
+    margin-bottom: var(--space-md);
+    color: #000000; /* Negro puro */
+    letter-spacing: -0.01em;
+    font-family: 'Inter', sans-serif;
+}
+
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-lg);
+}
+
+.skill-tag {
+    padding: var(--space-sm) var(--space-md);
+    background: rgba(16, 185, 129, 0.08); /* Fondo más sutil */
+    color: #065f46; /* Verde más oscuro para mejor contraste */
+    border-radius: var(--radius-sm); /* Bordes más pequeños para minimalismo */
+    font-size: 0.875rem;
+    font-weight: 400; /* Peso normal */
+    font-family: 'Inter', sans-serif;
+    border: 1px solid rgba(16, 185, 129, 0.15);
+    transition: var(--transition-normal);
+    letter-spacing: 0.01em;
+}
+
+.skill-tag:hover {
+    background: rgba(16, 185, 129, 0.12);
+    color: #047857;
+    transform: translateY(-1px);
+    border-color: rgba(16, 185, 129, 0.25);
+}
+
+/* Botón Descargar CV con estilo minimalista */
+.about-text .btn {
+    margin-top: var(--space-lg);
+    background: transparent;
+    color: #000000; /* Negro para minimalismo */
+    border: 1.5px solid #000000;
+    font-weight: 400;
+    font-family: 'Inter', sans-serif;
+    letter-spacing: 0.02em;
+    padding: 0.75rem 1.5rem;
+}
+
+.about-text .btn:hover {
+    background: #000000;
+    color: #ffffff;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.about-stats {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+}
+
+.stat {
+    text-align: center;
+    padding: var(--space-xl);
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: var(--radius-md); /* Bordes menos redondeados */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04); /* Sombra más sutil */
+    transition: var(--transition-normal);
+    border: 1px solid #f3f4f6;
+}
+
+.stat:hover {
+    transform: translateY(-3px); /* Movimiento más sutil */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+.stat-number {
+    display: block;
+    font-size: 2.25rem; /* Ligeramente más pequeño */
+    font-weight: 600; /* Peso medio */
+    color: var(--accent-color);
+    margin-bottom: var(--space-sm);
+    letter-spacing: -0.02em;
+    font-family: 'Inter', sans-serif;
+}
+
+.stat-title {
+    color: #374151; /* Gris oscuro en lugar de secondary color */
+    font-weight: 400; /* Peso normal */
+    font-size: 0.9rem;
+    letter-spacing: 0.01em;
+    font-family: 'Inter', sans-serif;
+}
+
+/* Responsive adjustments para mantener el minimalismo */
+@media screen and (max-width: 1024px) {
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: var(--space-xl);
+    }
+    
+    .about-stats {
+        grid-template-columns: repeat(3, 1fr);
+        flex-direction: row;
+    }
+    
+    .about-text p {
+        font-size: 1.1rem;
+    }
+    
+    .about-text p:first-child {
+        font-size: 1.15rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .about-stats {
+        grid-template-columns: 1fr;
+        flex-direction: column;
+    }
+    
+    .about-text p {
+        font-size: 1rem;
+        line-height: 1.7;
+    }
+    
+    .about-text p:first-child {
+        font-size: 1.1rem;
+    }
+    
+    .skills {
+        padding: var(--space-lg);
+    }
+    
+    .stat {
+        padding: var(--space-lg);
+    }
+    
+    .stat-number {
+        font-size: 2rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .about-text p {
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+    
+    .about-text p:first-child {
+        font-size: 1rem;
+    }
+    
+    .skills h3 {
+        font-size: 1.1rem;
+    }
+    
+    .skill-tag {
+        font-size: 0.8rem;
+        padding: 0.4rem 0.8rem;
+    }
+}
+/* Título "Sobre Mí" también en negro minimalista */
+#about .section-title {
+    color: #000000; /* Negro puro */
+    font-weight: 500; /* Peso medio para minimalismo */
+    font-family: 'Inter', sans-serif;
+    letter-spacing: -0.02em;
+}
+
+#about .section-title::after {
+    background: linear-gradient(90deg, #000000, #374151); /* Línea en negro degradado */
+}
