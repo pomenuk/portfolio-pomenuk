@@ -8,10 +8,10 @@
     <link rel="shortcut icon" href="static/img/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="static/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Fondo dinámico -->
+    <!-- Fondo dinámico violeta-azul fijo -->
     <div class="dynamic-background" id="dynamicBg"></div>
 
     <header>
@@ -27,84 +27,88 @@
                 <li><a href="#projects">Proyectos</a></li>
                 <li><a href="#contact">Contacto</a></li>
             </ul>
+            <div class="burger">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
         </nav>
     </header>
 
     <main>
-        <!-- Sección Hero -->
+        <!-- Sección Hero con glass effect pantalla completa -->
         <section id="home" class="hero">
             <div class="hero-content">
+                <!-- Nombre fijo sin movimiento ni cambio de tipografía -->
                 <div class="tech-name-container">
-                <div class="circuit-lines"></div>
-                <div class="name-3d-wrapper">
-                <div id="nameContainer" class="name-container">
-                <!-- Versión glitch -->
-                <div class="name-glitch-version">
-                    <div class="name-wrapper">
-                    <div class="name-glitch" data-text="Omeñuk">Omeñuk</div>
-                    <div class="surname-glitch" data-text="Pablo">Pablo</div>
-                    <div class="tech-tag">FULL-STACK DEV</div>
+                    <div class="name-3d-wrapper">
+                        <div id="nameContainer" class="name-container">
+                            <!-- Solo versión fija -->
+                            <div class="name-fixed-version">
+                                <div class="name-wrapper">
+                                    <div class="first-name-fixed">Omeñuk</div>
+                                    <div class="last-name-fixed">Pablo</div>
+                                    <div class="tech-tag">FULL-STACK DEV</div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 
-                <!-- Versión elegante (inicialmente oculta) -->
-                <div class="name-elegant-version">
-                    <div class="name-wrapper">
-                    <div class="first-name">Omeñuk</div>
-                    <div class="last-name">Pablo</div>
-                    <div class="tech-tag">FULL-STACK DEV</div>
-                    </div>
-                </div>
-                </div>
-                </div>
-                <div class="binary-overlay"></div>
-                <div class="data-particles"></div>
-                </div>
+                <!-- Efecto typewriter -->
                 <div class="typewriter-container">
                     <div class="typewriter-text" id="typewriter"></div>
                 </div>
+                
+                <!-- Botones de acción -->
                 <div class="cta-buttons">
                     <a href="#projects" class="btn primary-btn">Ver Proyectos</a>
                     <a href="#contact" class="btn secondary-btn">Contactar</a>
                 </div>
+                
+                <!-- Enlaces sociales -->
                 <div class="social-links">
-                    <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="#" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
                 </div>
             </div>
         </section>
 
         <!-- Sección Sobre Mí -->
         <section id="about" class="section">
-            <h2 class="section-title">Sobre Mí</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>Soy un desarrollador apasionado por crear soluciones tecnológicas que marquen la diferencia. Mi enfoque se centra en la simplicidad, la elegancia y la funcionalidad, siempre buscando la excelencia en cada proyecto.</p>
-                    <p>Con experiencia en desarrollo frontend, sistemas de seguridad, automatización y diseño de interfaces, me especializo en transformar ideas complejas en soluciones accesibles y eficientes.</p>
-                    <div class="skills">
-                        <h3>Especialidades</h3>
-                        <div class="skill-tags">
-                            <span class="skill-tag">Desarrollo Frontend</span>
-                            <span class="skill-tag">Sistemas de Seguridad</span>
-                            <span class="skill-tag">Automatización</span>
-                            <span class="skill-tag">Diseño UI/UX</span>
-                            <span class="skill-tag">ERPs</span>
-                            <span class="skill-tag">Sistemas de Mensajería</span>
+            <div class="container">
+                <h2 class="section-title">Sobre Mí</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>Soy un desarrollador apasionado por crear soluciones tecnológicas que marquen la diferencia. Mi enfoque se centra en la simplicidad, la elegancia y la funcionalidad, siempre buscando la excelencia en cada proyecto.</p>
+                        <p>Con experiencia en desarrollo frontend, sistemas de seguridad, automatización y diseño de interfaces, me especializo en transformar ideas complejas en soluciones accesibles y eficientes.</p>
+                        <div class="skills">
+                            <h3>Especialidades</h3>
+                            <div class="skill-tags">
+                                <span class="skill-tag animate-element">Desarrollo Frontend</span>
+                                <span class="skill-tag animate-element">Sistemas de Seguridad</span>
+                                <span class="skill-tag animate-element">Automatización</span>
+                                <span class="skill-tag animate-element">Diseño UI/UX</span>
+                                <span class="skill-tag animate-element">ERPs</span>
+                                <span class="skill-tag animate-element">Sistemas de Mensajería</span>
+                            </div>
                         </div>
+                        <a href="#" class="btn secondary-btn">Descargar CV</a>
                     </div>
-                    <a href="#" class="btn secondary-btn">Descargar CV</a>
-                </div>
-                <div class="about-stats">
-                    <div class="stat">
-                        <span class="stat-number">3+</span>
-                        <span class="stat-title">Años de Experiencia</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-number">15+</span>
-                        <span class="stat-title">Proyectos Completados</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-number">100%</span>
-                        <span class="stat-title">Clientes Satisfechos</span>
+                    <div class="about-stats">
+                        <div class="stat animate-element">
+                            <span class="stat-number">3+</span>
+                            <span class="stat-title">Años de Experiencia</span>
+                        </div>
+                        <div class="stat animate-element">
+                            <span class="stat-number">15+</span>
+                            <span class="stat-title">Proyectos Completados</span>
+                        </div>
+                        <div class="stat animate-element">
+                            <span class="stat-number">100%</span>
+                            <span class="stat-title">Clientes Satisfechos</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -112,64 +116,66 @@
 
         <!-- Sección de Proyectos -->
         <section id="projects" class="section">
-            <h2 class="section-title">Mis Proyectos</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-image">
-                        <span>Sistema de Seguridad</span>
-                    </div>
-                    <div class="project-info">
-                        <h3 class="project-title">Sistema de Autenticación Avanzado</h3>
-                        <p class="project-description">Plataforma de seguridad con autenticación multifactor, gestión de permisos y auditoría completa para empresas.</p>
-                        <div class="project-tags">
-                            <span class="project-tag">React</span>
-                            <span class="project-tag">Node.js</span>
-                            <span class="project-tag">JWT</span>
-                            <span class="project-tag">OAuth</span>
+            <div class="container">
+                <h2 class="section-title">Mis Proyectos</h2>
+                <div class="projects-grid">
+                    <div class="project-card animate-element">
+                        <div class="project-image">
+                            <span>Sistema de Seguridad</span>
                         </div>
-                        <div class="project-links">
-                            <a href="#" target="_blank" class="project-link">Ver Demo <i class="fas fa-external-link-alt"></i></a>
-                            <a href="#" target="_blank" class="project-link">GitHub <i class="fab fa-github"></i></a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="project-card">
-                    <div class="project-image">
-                        <span>Automatización</span>
-                    </div>
-                    <div class="project-info">
-                        <h3 class="project-title">Plataforma de Automatización</h3>
-                        <p class="project-description">Sistema de automatización de flujos de trabajo con interfaz intuitiva y integración con múltiples servicios.</p>
-                        <div class="project-tags">
-                            <span class="project-tag">Vue.js</span>
-                            <span class="project-tag">Python</span>
-                            <span class="project-tag">API</span>
-                            <span class="project-tag">Webhooks</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" target="_blank" class="project-link">Ver Demo <i class="fas fa-external-link-alt"></i></a>
-                            <a href="#" target="_blank" class="project-link">GitHub <i class="fab fa-github"></i></a>
+                        <div class="project-info">
+                            <h3 class="project-title">Sistema de Autenticación Avanzado</h3>
+                            <p class="project-description">Plataforma de seguridad con autenticación multifactor, gestión de permisos y auditoría completa para empresas.</p>
+                            <div class="project-tags">
+                                <span class="project-tag">React</span>
+                                <span class="project-tag">Node.js</span>
+                                <span class="project-tag">JWT</span>
+                                <span class="project-tag">OAuth</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" target="_blank" class="project-link">Ver Demo <i class="fas fa-external-link-alt"></i></a>
+                                <a href="#" target="_blank" class="project-link">GitHub <i class="fab fa-github"></i></a>
+                            </div>
                         </div>
                     </div>
-                </div>
-                
-                <div class="project-card">
-                    <div class="project-image">
-                        <span>ERP System</span>
-                    </div>
-                    <div class="project-info">
-                        <h3 class="project-title">Sistema ERP Empresarial</h3>
-                        <p class="project-description">Solución completa de gestión empresarial con módulos de inventario, facturación y reporting avanzado.</p>
-                        <div class="project-tags">
-                            <span class="project-tag">Angular</span>
-                            <span class="project-tag">Express</span>
-                            <span class="project-tag">PostgreSQL</span>
-                            <span class="project-tag">Docker</span>
+                    
+                    <div class="project-card animate-element">
+                        <div class="project-image">
+                            <span>Automatización</span>
                         </div>
-                        <div class="project-links">
-                            <a href="#" target="_blank" class="project-link">Ver Demo <i class="fas fa-external-link-alt"></i></a>
-                            <a href="#" target="_blank" class="project-link">GitHub <i class="fab fa-github"></i></a>
+                        <div class="project-info">
+                            <h3 class="project-title">Plataforma de Automatización</h3>
+                            <p class="project-description">Sistema de automatización de flujos de trabajo con interfaz intuitiva y integración con múltiples servicios.</p>
+                            <div class="project-tags">
+                                <span class="project-tag">Vue.js</span>
+                                <span class="project-tag">Python</span>
+                                <span class="project-tag">API</span>
+                                <span class="project-tag">Webhooks</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" target="_blank" class="project-link">Ver Demo <i class="fas fa-external-link-alt"></i></a>
+                                <a href="#" target="_blank" class="project-link">GitHub <i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card animate-element">
+                        <div class="project-image">
+                            <span>ERP System</span>
+                        </div>
+                        <div class="project-info">
+                            <h3 class="project-title">Sistema ERP Empresarial</h3>
+                            <p class="project-description">Solución completa de gestión empresarial con módulos de inventario, facturación y reporting avanzado.</p>
+                            <div class="project-tags">
+                                <span class="project-tag">Angular</span>
+                                <span class="project-tag">Express</span>
+                                <span class="project-tag">PostgreSQL</span>
+                                <span class="project-tag">Docker</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" target="_blank" class="project-link">Ver Demo <i class="fas fa-external-link-alt"></i></a>
+                                <a href="#" target="_blank" class="project-link">GitHub <i class="fab fa-github"></i></a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -178,129 +184,56 @@
 
         <!-- Sección de Contacto -->
         <section id="contact" class="section">
-            <h2 class="section-title">Contacto</h2>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <a href="mailto:pomenuk@ejemplo.com">pomenuk@ejemplo.com</a>
+            <div class="container">
+                <h2 class="section-title">Contacto</h2>
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <div class="contact-item animate-element">
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:pomenuk@ejemplo.com">pomenuk@ejemplo.com</a>
+                        </div>
+                        <div class="contact-item animate-element">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <p>Disponible para proyectos remotos</p>
+                        </div>
+                        <div class="contact-item animate-element">
+                            <i class="fas fa-phone"></i>
+                            <p>+1 (555) 123-4567</p>
+                        </div>
+                        <div class="social-links contact-social">
+                            <a href="#" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                            <a href="#" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        </div>
                     </div>
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <p>Disponible para proyectos remotos</p>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <p>+1 (555) 123-4567</p>
-                    </div>
-                    <div class="social-links contact-social" style="margin-top: 2rem;">
-                        <a href="#" target="_blank"><i class="fab fa-github"></i></a>
-                        <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
-                        <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
-                    </div>
+                    <form class="contact-form">
+                        <div class="form-group">
+                            <label for="name">Nombre</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Mensaje</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn primary-btn">Enviar Mensaje</button>
+                    </form>
                 </div>
-                <form class="contact-form">
-                    <div class="form-group">
-                        <label for="name">Nombre</label>
-                        <input type="text" id="name" name="name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Mensaje</label>
-                        <textarea id="message" name="message" rows="5" required></textarea>
-                    </div>
-                    <button type="submit" class="btn primary-btn">Enviar Mensaje</button>
-                </form>
             </div>
         </section>
     </main>
 
     <footer>
         <div class="footer-content">
-            <p>&copy; 2025 Primaxs. Todos los derechos reservados.</p>
+            <p>&copy; 2025 Omeñuk Pablo. Todos los derechos reservados.</p>
             <p>Diseñado con <span class="heart">♥</span> y atención al detalle</p>
         </div>
     </footer>
-    </style>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-        // Alternar entre los estilos cada 30 segundos
-        const nameContainer = document.getElementById('nameContainer');
-        const glitchVersion = nameContainer.querySelector('.name-glitch-version');
-        const elegantVersion = nameContainer.querySelector('.name-elegant-version');
-        
-        function toggleNameStyle() {
-            // Si el glitch está visible, mostrar versión elegante
-            if (glitchVersion.style.opacity === '1' || glitchVersion.style.opacity === '') {
-            glitchVersion.style.opacity = '0';
-            elegantVersion.style.opacity = '1';
-            } 
-            // Si la versión elegante está visible, mostrar glitch
-            else {
-            glitchVersion.style.opacity = '1';
-            elegantVersion.style.opacity = '0';
-            }
-        }
-        
-        // Cambiar cada 30 segundos
-        setInterval(toggleNameStyle, 30000);
-        
-        // Hacer que el nombre reaccione al movimiento del ratón
-        const nameWrapper = document.querySelector('.name-3d-wrapper');
-        document.addEventListener('mousemove', (e) => {
-            const xAxis = (window.innerWidth / 2 - e.pageX) / 25;
-            const yAxis = (window.innerHeight / 2 - e.pageY) / 25;
-            nameWrapper.style.transform = `perspective(800px) rotateY(${xAxis}deg) rotateX(${-yAxis}deg) translateY(-5px)`;
-        });
-        });
-
-        function createDataParticle(container, width, height) {
-        const particle = document.createElement('div');
-        const size = Math.random() * 4 + 2;
-        
-        particle.style.cssText = `
-            position: absolute;
-            width: ${size}px;
-            height: ${size}px;
-            background-color: rgba(16, 185, 129, ${Math.random() * 0.5 + 0.3});
-            border-radius: 50%;
-            top: ${Math.random() * height}px;
-            left: ${Math.random() * width}px;
-            opacity: ${Math.random() * 0.8 + 0.2};
-            box-shadow: 0 0 ${size + 2}px rgba(16, 185, 129, 0.7);
-            animation: particleFloat ${Math.random() * 6 + 4}s linear infinite;
-        `;
-        
-        const animationDuration = Math.random() * 6 + 4;
-        const xMovement = (Math.random() - 0.5) * width * 0.3;
-        const yMovement = (Math.random() - 0.5) * height * 0.3;
-        
-        const keyframes = `
-            @keyframes particleFloat${animationDuration} {
-            0%, 100% {
-                transform: translate(0, 0);
-                opacity: ${Math.random() * 0.5 + 0.3};
-            }
-            50% {
-                transform: translate(${xMovement}px, ${yMovement}px);
-                opacity: ${Math.random() * 0.8 + 0.2};
-            }
-            }
-        `;
-        
-        const style = document.createElement('style');
-        style.innerHTML = keyframes;
-        document.head.appendChild(style);
-        
-        particle.style.animation = `particleFloat${animationDuration} ${animationDuration}s ease-in-out infinite`;
-        
-        container.appendChild(particle);
-        }
-    </script>
+    <!-- JavaScript principal -->
     <script src="static/js/script.js"></script>
 </body>
 </html>
