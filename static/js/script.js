@@ -1,134 +1,12 @@
 // ====================================
-// PORTFOLIO JAVASCRIPT - VERSIÓN COMPLETA ACTUALIZADA
+// PORTFOLIO JAVASCRIPT - VERSIÓN ACTUALIZADA SIN GOTA DE AGUA
 // ====================================
 
 class PortfolioApp {
     constructor() {
-        this.initWaterDropLoader();
         this.init();
         this.setupEventListeners();
         this.startAnimations();
-    }
-
-    // ====================================
-    // ANIMACIÓN DE ENTRADA TIPO GOTA DE AGUA
-    // ====================================
-    initWaterDropLoader() {
-        // Crear el loader con animación de gota de agua
-        const loader = document.createElement('div');
-        loader.className = 'water-drop-loader';
-        loader.innerHTML = `
-            <div class="water-drop"></div>
-        `;
-        
-        // Agregar estilos dinámicos para el loader
-        const loaderStyles = document.createElement('style');
-        loaderStyles.textContent = `
-            .water-drop-loader {
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background: linear-gradient(135deg, #4c63d2 0%, #6366f1 25%, #8b5cf6 50%, #a855f7 75%, #c084fc 100%);
-                z-index: 10000;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                overflow: hidden;
-            }
-
-            .water-drop {
-                width: 60px;
-                height: 60px;
-                background: rgba(255, 255, 255, 0.9);
-                border-radius: 50%;
-                position: relative;
-                animation: waterDrop 3s ease-out forwards;
-            }
-
-            .water-drop::before {
-                content: '';
-                position: absolute;
-                top: -20px;
-                left: 50%;
-                transform: translateX(-50%);
-                width: 20px;
-                height: 30px;
-                background: rgba(255, 255, 255, 0.9);
-                border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
-                animation: dropForm 1.5s ease-out;
-            }
-
-            @keyframes waterDrop {
-                0% {
-                    transform: scale(0);
-                    border-radius: 50%;
-                }
-                50% {
-                    transform: scale(0.5);
-                    border-radius: 50%;
-                }
-                80% {
-                    transform: scale(20);
-                    border-radius: 20%;
-                    opacity: 0.8;
-                }
-                100% {
-                    transform: scale(100);
-                    border-radius: 0%;
-                    opacity: 0;
-                }
-            }
-
-            @keyframes dropForm {
-                0% {
-                    opacity: 1;
-                    transform: translateX(-50%) translateY(0);
-                }
-                50% {
-                    opacity: 1;
-                    transform: translateX(-50%) translateY(10px);
-                }
-                100% {
-                    opacity: 0;
-                    transform: translateX(-50%) translateY(20px);
-                }
-            }
-
-            .page-content {
-                opacity: 0;
-                animation: pageReveal 1s ease-out 2.8s forwards;
-            }
-
-            @keyframes pageReveal {
-                0% {
-                    opacity: 0;
-                    transform: scale(1.1);
-                }
-                100% {
-                    opacity: 1;
-                    transform: scale(1);
-                }
-            }
-        `;
-        
-        document.head.appendChild(loaderStyles);
-        document.body.appendChild(loader);
-        
-        // Agregar clase al contenido principal
-        document.body.classList.add('page-content');
-        
-        // Remover loader después de la animación
-        setTimeout(() => {
-            loader.style.opacity = '0';
-            setTimeout(() => {
-                if (loader.parentNode) {
-                    loader.parentNode.removeChild(loader);
-                }
-                document.head.removeChild(loaderStyles);
-            }, 500);
-        }, 3000);
     }
 
     // ====================================
@@ -136,8 +14,7 @@ class PortfolioApp {
     // ====================================
     init() {
         this.isScrolling = false;
-        this.currentTypewriterIndex = 0;
-        this.typewriterTexts = [
+        this.modernTexts = [
             "Desarrollador Full-Stack especializado en crear experiencias digitales excepcionales.",
             "Transformo ideas complejas en soluciones simples y elegantes.",
             "Apasionado por la innovación tecnológica y el diseño centrado en el usuario.",
@@ -145,15 +22,12 @@ class PortfolioApp {
             "Especialista en sistemas de seguridad y automatización empresarial.",
             "Diseñando interfaces que conectan personas con tecnología."
         ];
+        this.currentTextIndex = 0;
         
         this.setupScrollProgress();
         this.setupIntersectionObserver();
         this.setupPerformanceOptimizations();
-        
-        // Crear versión fija del nombre después de la carga
-        setTimeout(() => {
-            this.createFixedNameVersion();
-        }, 100);
+        this.createFixedNameVersion();
     }
 
     // ====================================
@@ -161,12 +35,8 @@ class PortfolioApp {
     // ====================================
     createFixedNameVersion() {
         const nameContainer = document.getElementById('nameContainer');
-        if (!nameContainer) return;
-
-        // Si ya existe contenido, no hacer nada
-        if (nameContainer.innerHTML.trim() !== '') return;
+        if (!nameContainer || nameContainer.innerHTML.trim() !== '') return;
         
-        // Crear versión fija
         const fixedVersion = document.createElement('div');
         fixedVersion.className = 'name-fixed-version';
         fixedVersion.innerHTML = `
@@ -184,25 +54,14 @@ class PortfolioApp {
     // EVENT LISTENERS
     // ====================================
     setupEventListeners() {
-        // Scroll optimizado con throttling
         window.addEventListener('scroll', this.throttle(this.handleScroll.bind(this), 16));
-        
-        // Resize optimizado con debouncing
         window.addEventListener('resize', this.debounce(this.handleResize.bind(this), 250));
         
-        // Navegación suave
         this.setupSmoothNavigation();
-        
-        // Menú móvil
         this.setupMobileMenu();
-        
-        // Formulario de contacto
         this.setupContactForm();
         
-        // Teclado para accesibilidad
         document.addEventListener('keydown', this.handleKeyboard.bind(this));
-        
-        // Visibilidad de página
         document.addEventListener('visibilitychange', this.handleVisibilityChange.bind(this));
     }
 
@@ -230,16 +89,6 @@ class PortfolioApp {
         if (!progressBar) {
             progressBar = document.createElement('div');
             progressBar.className = 'scroll-progress';
-            progressBar.style.cssText = `
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 0%;
-                height: 3px;
-                background: linear-gradient(90deg, #6366f1, #8b5cf6);
-                z-index: 9999;
-                transition: width 0.3s ease;
-            `;
             document.body.appendChild(progressBar);
         }
         
@@ -337,7 +186,6 @@ class PortfolioApp {
             this.toggleMobileMenu();
         });
 
-        // Cerrar menú al hacer click en un enlace
         navLinks.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
                 if (window.innerWidth <= 768) {
@@ -346,7 +194,6 @@ class PortfolioApp {
             });
         });
 
-        // Cerrar menú al hacer click fuera
         document.addEventListener('click', (e) => {
             if (window.innerWidth <= 768 && 
                 !burger.contains(e.target) && 
@@ -382,67 +229,74 @@ class PortfolioApp {
     }
 
     // ====================================
-    // EFECTOS VISUALES
+    // EFECTOS VISUALES MODERNOS
     // ====================================
     startAnimations() {
-        this.startTypewriterEffect();
+        this.startModernTextEffect();
         this.initializeScrollAnimations();
     }
 
-    startTypewriterEffect() {
-        const typewriterElement = document.getElementById('typewriter');
-        if (!typewriterElement) return;
-
-        const typeText = (text, callback) => {
-            let i = 0;
-            typewriterElement.textContent = '';
+    startModernTextEffect() {
+        const container = document.querySelector('.typewriter-container') || 
+                         document.querySelector('.modern-text-container');
+        
+        if (!container) {
+            // Crear contenedor si no existe
+            const heroContent = document.querySelector('.hero-content');
+            const nameContainer = document.querySelector('.tech-name-container');
             
-            const typing = () => {
-                if (i < text.length) {
-                    typewriterElement.textContent += text.charAt(i);
-                    i++;
-                    setTimeout(typing, 50 + Math.random() * 50);
-                } else {
-                    setTimeout(() => {
-                        this.eraseText(callback);
-                    }, 3000);
-                }
-            };
-            
-            typing();
-        };
-
-        const nextText = () => {
-            if (this.currentTypewriterIndex >= this.typewriterTexts.length) {
-                this.currentTypewriterIndex = 0;
+            if (heroContent && nameContainer) {
+                const modernContainer = document.createElement('div');
+                modernContainer.className = 'modern-text-container';
+                
+                // Insertar después del nombre
+                nameContainer.parentNode.insertBefore(modernContainer, nameContainer.nextSibling);
+                
+                this.createModernText(modernContainer);
             }
-            
-            const currentText = this.typewriterTexts[this.currentTypewriterIndex];
-            this.currentTypewriterIndex++;
-            
-            typeText(currentText, nextText);
-        };
-
-        // Iniciar después de la animación de carga
-        setTimeout(nextText, 3500);
+        } else {
+            // Convertir contenedor existente
+            container.className = 'modern-text-container';
+            this.createModernText(container);
+        }
     }
 
-    eraseText(callback) {
-        const typewriterElement = document.getElementById('typewriter');
-        const text = typewriterElement.textContent;
-        let i = text.length;
+    createModernText(container) {
+        const modernText = document.createElement('div');
+        modernText.className = 'modern-text';
+        
+        // Obtener texto actual
+        const currentText = this.modernTexts[this.currentTextIndex];
+        
+        // Dividir en palabras y crear spans
+        const words = currentText.split(' ');
+        const wordsHTML = words.map((word, index) => 
+            `<span class="word" style="animation-delay: ${(index + 1) * 0.1}s">${word}</span>`
+        ).join(' ');
+        
+        modernText.innerHTML = wordsHTML;
+        container.innerHTML = '';
+        container.appendChild(modernText);
+        
+        // Cambiar texto cada 5 segundos
+        setTimeout(() => {
+            this.changeModernText(container);
+        }, 5000);
+    }
 
-        const erasing = () => {
-            if (i > 0) {
-                typewriterElement.textContent = text.substring(0, i - 1);
-                i--;
-                setTimeout(erasing, 30);
-            } else {
-                setTimeout(callback, 500);
-            }
-        };
-
-        erasing();
+    changeModernText(container) {
+        this.currentTextIndex = (this.currentTextIndex + 1) % this.modernTexts.length;
+        
+        const currentModernText = container.querySelector('.modern-text');
+        if (currentModernText) {
+            // Animar salida
+            currentModernText.style.opacity = '0';
+            currentModernText.style.transform = 'translateY(-20px)';
+            
+            setTimeout(() => {
+                this.createModernText(container);
+            }, 500);
+        }
     }
 
     // ====================================
@@ -469,13 +323,12 @@ class PortfolioApp {
             });
         }, observerOptions);
 
-        // Observar elementos después de la carga
         setTimeout(() => {
             const animateElements = document.querySelectorAll('.animate-element');
             animateElements.forEach(el => {
                 this.observer.observe(el);
             });
-        }, 3000);
+        }, 1000);
     }
 
     initializeScrollAnimations() {
@@ -711,16 +564,10 @@ class PortfolioApp {
     }
 
     handleVisibilityChange() {
-        // Pausar/reanudar animaciones según visibilidad
-        if (document.visibilityState === 'hidden') {
-            // Pausar animaciones costosas
-        } else {
-            // Reanudar animaciones
-        }
+        // Optimización para cuando la página no es visible
     }
 
     setupPerformanceOptimizations() {
-        // Lazy loading para imágenes
         if ('IntersectionObserver' in window) {
             const imageObserver = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
@@ -739,24 +586,10 @@ class PortfolioApp {
                 imageObserver.observe(img);
             });
         }
-
-        // Preload de recursos críticos
-        const criticalResources = [
-            'static/css/style.css',
-            'static/js/script.js'
-        ];
-
-        criticalResources.forEach(resource => {
-            const link = document.createElement('link');
-            link.rel = 'preload';
-            link.href = resource;
-            link.as = resource.endsWith('.css') ? 'style' : 'script';
-            document.head.appendChild(link);
-        });
     }
 
     setupScrollProgress() {
-        // El progreso de scroll se crea dinámicamente en updateScrollProgress
+        // El progreso de scroll se crea dinámicamente
     }
 
     // Utilidades para throttle y debounce
@@ -796,35 +629,22 @@ class PortfolioApp {
 document.addEventListener('DOMContentLoaded', () => {
     console.log('🚀 Portfolio de Omeñuk Pablo - Inicializando...');
     
-    // Verificar soporte de características modernas
-    const supportsModernFeatures = {
-        intersectionObserver: 'IntersectionObserver' in window,
-        backdropFilter: CSS.supports('backdrop-filter', 'blur(10px)'),
-        customProperties: CSS.supports('color', 'var(--test)')
-    };
-    
-    console.log('Características soportadas:', supportsModernFeatures);
-    
-    // Inicializar aplicación principal
     const portfolioApp = new PortfolioApp();
     
-    // Manejo de errores globales
     window.addEventListener('error', (e) => {
         console.error('Error en Portfolio App:', e.error);
     });
     
-    // Log de bienvenida
     console.log(`
     🌟 Portfolio de Omeñuk Pablo
     📅 Inicializado: ${new Date().toLocaleString()}
-    💻 Versión: 2.1.0
+    💻 Versión: 2.2.0
     🎨 Diseño: Minimalista y Profesional
-    ⚡ Optimizado para rendimiento
+    ⚡ Optimizado para UX moderna
     🚀 ¡Gracias por visitar mi portfolio!
     `);
 });
 
-// Exportar para uso en módulos si es necesario
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = { PortfolioApp };
 }
