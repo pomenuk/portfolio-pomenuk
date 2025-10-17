@@ -1220,3 +1220,166 @@ textarea:focus,
         transform: translateY(-1px);
     }
 }
+/* ====================================
+   CORRECCIÓN DEL NAVBAR - ALTURA REDUCIDA
+   ==================================== */
+
+/* Navbar con altura estándar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 5%; /* Reducido de 1.5rem a 0.75rem */
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    transition: var(--transition-normal);
+    height: 60px; /* Altura fija estándar */
+}
+
+/* Logo más pequeño y proporcional */
+.logo a {
+    font-size: 1.25rem; /* Reducido de 1.5rem */
+    font-weight: 700;
+    color: var(--primary-color);
+    text-decoration: none;
+    letter-spacing: -0.02em;
+    transition: var(--transition-normal);
+    display: flex;
+    align-items: center;
+}
+
+/* Si tienes logo en imagen */
+.nav-logo {
+    height: 32px; /* Reducido de 40px a 32px */
+    width: auto;
+    vertical-align: middle;
+    transition: var(--transition-normal);
+}
+
+.logo a:hover .nav-logo {
+    transform: scale(1.05);
+}
+
+/* Ajuste de enlaces de navegación */
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem; /* Reducido de 2rem */
+    align-items: center;
+}
+
+.nav-links a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9rem; /* Reducido ligeramente */
+    position: relative;
+    padding: 0.4rem 0.8rem; /* Reducido el padding */
+    border-radius: var(--radius-md);
+    transition: var(--transition-normal);
+    letter-spacing: 0.02em;
+}
+
+/* Estado scrolled con altura mantenida */
+.navbar.scrolled {
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: var(--shadow-lg);
+    height: 60px; /* Mantener altura consistente */
+}
+
+/* Ajuste del hero para compensar el navbar más bajo */
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding-top: 60px; /* Ajustado para el navbar más bajo */
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Móvil - navbar aún más compacto */
+@media screen and (max-width: 768px) {
+    .navbar {
+        padding: 0.5rem 5%; /* Aún más compacto en móvil */
+        height: 50px; /* Más bajo en móvil */
+    }
+    
+    .logo a {
+        font-size: 1.1rem;
+    }
+    
+    .nav-logo {
+        height: 28px; /* Más pequeño en móvil */
+    }
+    
+    .hero {
+        padding-top: 50px; /* Ajuste para móvil */
+    }
+    
+    .nav-links {
+        top: 50px; /* Ajustar posición del menú móvil */
+    }
+}
+
+/* Extra pequeño */
+@media screen and (max-width: 480px) {
+    .navbar {
+        padding: 0.4rem 1rem;
+        height: 48px;
+    }
+    
+    .logo a {
+        font-size: 1rem;
+    }
+    
+    .nav-logo {
+        height: 24px;
+    }
+    
+    .hero {
+        padding-top: 48px;
+    }
+}
+
+/* Burger menu ajustado */
+.burger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 3px; /* Reducido de 4px */
+}
+
+.burger div {
+    width: 22px; /* Reducido de 25px */
+    height: 2px;
+    background: var(--text-primary);
+    transition: var(--transition-normal);
+    border-radius: 1px;
+}
+
+/* Asegurar que el contenido no se sobreponga */
+section {
+    scroll-margin-top: 70px; /* Espacio para el navbar fijo */
+}
+
+@media screen and (max-width: 768px) {
+    section {
+        scroll-margin-top: 60px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    section {
+        scroll-margin-top: 55px;
+    }
+}
