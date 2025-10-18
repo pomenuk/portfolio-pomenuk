@@ -1383,3 +1383,88 @@ textarea:focus,
     transition: color 0.3s ease, background-color 0.2s ease !important;
   }
 }
+/* === CORRECCIÓN PARA ESPACIADO DE NOMBRES EN MÓVIL === */
+
+@media screen and (max-width: 480px) {
+  .container {
+    padding: 0 var(--space-sm);
+  }
+  .hero-content {
+    padding: var(--space-xl) var(--space-md);
+  }
+  .section {
+    padding: var(--space-2xl) var(--space-md);
+  }
+  .tech-name-container {
+    height: 120px;
+    margin-top: -var(--space-xl);
+    margin-bottom: var(--space-2xl);
+  }
+  .modern-text-container {
+    height: 120px;
+    margin-top: var(--space-2xl);
+    margin-bottom: var(--space-xl);
+  }
+  .name-wrapper {
+    gap: var(--space-sm);
+  }
+  
+  /* CORRECCIÓN: Cambiar gap de 0 a var(--space-sm) para separar los nombres */
+  .names-group {
+    gap: var(--space-sm); /* Cambio de gap: 0 a gap: var(--space-sm) */
+    margin-bottom: var(--space-xs);
+  }
+  
+  .slogan {
+    font-size: clamp(0.85rem, 4vw, 1.1rem);
+    margin-top: var(--space-xs);
+    margin-bottom: 0;
+  }
+  .modern-text {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+  .contact-form {
+    padding: var(--space-lg);
+  }
+  section {
+    scroll-margin-top: 60px;
+  }
+}
+
+/* === AJUSTE ADICIONAL PARA MÓVILES MUY PEQUEÑOS === */
+@media screen and (max-width: 360px) {
+  .tech-name-container {
+    height: 85px;
+    margin-top: -var(--space-2xl);
+    margin-bottom: var(--space-3xl);
+  }
+  .modern-text-container {
+    height: 100px;
+    margin-top: var(--space-3xl);
+  }
+  .hero-content {
+    padding-top: calc(var(--space-3xl) + 30px);
+  }
+  
+  /* Mantener separación en móviles extra pequeños también */
+  .names-group {
+    gap: var(--space-xs); /* Espacio más pequeño pero visible */
+  }
+  
+  .slogan {
+    font-size: 0.8rem;
+  }
+  .modern-text {
+    font-size: 0.9rem;
+  }
+}
+
+/* === MANTENER COMPORTAMIENTO PARA TABLETS === */
+@media screen and (max-width: 768px) and (min-width: 481px) {
+  .names-group {
+    flex-direction: column;
+    gap: var(--space-sm); /* Asegurar que mantenga separación en tablets */
+    margin-bottom: var(--space-md);
+  }
+}
