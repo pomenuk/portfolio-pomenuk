@@ -2068,11 +2068,11 @@ textarea:focus,
 /* SLOGAN SIN FONDO - Mismo estilo que el nombre pero más pequeño */
 .slogan {
     font-family: 'Inter', sans-serif; /* Misma tipografía que el nombre */
-    font-weight: 500; /* Peso medio, menos que el nombre */
-    font-size: clamp(1.2rem, 3vw, 1.8rem); /* Más pequeño que el nombre */
+    font-weight: 400; /* Peso medio, menos que el nombre */
+    font-size: clamp(0.9rem, 2vw, 1.0rem); /* Más pequeño que el nombre */
     letter-spacing: -0.01em; /* Mismo espaciado de letras */
-    color: rgba(255, 255, 255, 0.85); /* Ligeramente menos opaco que el nombre */
-    text-shadow: 0 4px 20px rgba(255, 255, 255, 0.4); /* Misma sombra pero más sutil */
+    color: rgba(255, 255, 255, 0.918); /* Ligeramente menos opaco que el nombre */
+    text-shadow: 0 4px 20px rgba(255, 255, 255, 0.849); /* Misma sombra pero más sutil */
     text-align: center;
     
     /* SIN FONDO - Eliminamos todas las propiedades de fondo */
@@ -2088,7 +2088,7 @@ textarea:focus,
 
 /* Efecto hover muy sutil para el slogan */
 .slogan:hover {
-    color: rgba(255, 255, 255, 0.95); /* Solo cambio de opacidad */
+    color: rgba(255, 255, 255, 0); /* Solo cambio de opacidad */
     transform: translateY(-1px); /* Movimiento muy sutil */
 }
 
@@ -2100,7 +2100,7 @@ textarea:focus,
 
 /* Ajustar la altura del contenedor para acomodar sin el tag */
 .tech-name-container {
-    height: 100px; /* Reducir altura ya que no hay tag */
+    height: 170px; /* Reducir altura ya que no hay tag */
     margin-bottom: var(--space-lg);
 }
 
