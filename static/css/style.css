@@ -2130,3 +2130,163 @@ textarea:focus,
         gap: var(--space-sm); /* Menos espacio en móvil */
     }
 }
+/* === ACTUALIZACIÓN PARA QUITAR FONDOS === */
+
+/* 1. Eliminar fondo del slogan en hover */
+.slogan {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: clamp(1.2rem, 3vw, 1.8rem);
+    letter-spacing: -0.01em;
+    color: rgba(255, 255, 255, 0.85);
+    text-shadow: 0 4px 20px rgba(255, 255, 255, 0.4);
+    text-align: center;
+    transition: var(--transition-normal);
+    
+    /* SIN FONDO */
+    background: none !important;
+    backdrop-filter: none !important;
+    padding: 0 !important;
+    border: none !important;
+    border-radius: 0 !important;
+}
+
+/* Hover del slogan SIN fondo - solo cambio de color */
+.slogan:hover {
+    color: rgba(255, 255, 255, 0.95);
+    transform: translateY(-1px);
+    /* SIN background, SIN border-color */
+    background: none !important;
+    border: none !important;
+}
+
+/* Eliminar cualquier pseudo-elemento del slogan */
+.slogan::before,
+.slogan::after {
+    display: none !important;
+}
+
+/* 2. Eliminar fondo de los enlaces del menú de navegación */
+.nav-links a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9rem;
+    position: relative;
+    padding: 0.4rem 0.8rem; /* Mantener padding para área de click */
+    border-radius: var(--radius-md);
+    transition: var(--transition-normal);
+    letter-spacing: 0.02em;
+    
+    /* SIN FONDO por defecto */
+    background: transparent !important;
+}
+
+/* Hover y active SIN fondo - solo cambio de color y línea inferior */
+.nav-links a:hover,
+.nav-links a.active {
+    color: rgba(255, 255, 255, 1);
+    /* QUITAR FONDO */
+    background: transparent !important;
+}
+
+/* Mantener solo la línea inferior en hover/active */
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 50%;
+    background: rgba(255, 255, 255, 0.9);
+    transition: var(--transition-normal);
+    transform: translateX(-50%);
+    border-radius: 1px;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 80%;
+}
+
+/* === AJUSTES ADICIONALES === */
+
+/* Contenedor de nombres actualizado */
+.name-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    justify-content: center;
+    gap: var(--space-md);
+}
+
+/* Contenedor de nombres */
+.names-group {
+    display: flex;
+    align-items: center;
+    gap: var(--space-lg);
+    justify-content: center;
+    margin-bottom: 0;
+}
+
+/* Contenedor del slogan */
+.slogan-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+}
+
+/* Eliminar el tech-tag completamente */
+.tech-tag {
+    display: none !important;
+}
+
+/* Ajustar altura del contenedor */
+.tech-name-container {
+    height: 150px;
+    margin-bottom: var(--space-lg);
+}
+
+/* === RESPONSIVE === */
+@media screen and (max-width: 768px) {
+    .names-group {
+        flex-direction: column;
+        gap: var(--space-sm);
+    }
+    
+    .slogan {
+        font-size: clamp(1rem, 4vw, 1.4rem);
+        margin-top: var(--space-sm);
+    }
+    
+    .tech-name-container {
+        height: 130px;
+    }
+    
+    /* Navegación móvil sin fondos */
+    .nav-links a {
+        background: transparent !important;
+    }
+    
+    .nav-links a:hover,
+    .nav-links a.active {
+        background: transparent !important;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .slogan {
+        font-size: clamp(0.9rem, 4vw, 1.2rem);
+        letter-spacing: 0;
+    }
+    
+    .tech-name-container {
+        height: 120px;
+    }
+    
+    .name-wrapper {
+        gap: var(--space-sm);
+    }
+}
