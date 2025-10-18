@@ -2068,8 +2068,8 @@ textarea:focus,
 /* SLOGAN SIN FONDO - Mismo estilo que el nombre pero más pequeño */
 .slogan {
     font-family: 'Inter', sans-serif; /* Misma tipografía que el nombre */
-    font-weight: 480; /* Peso medio, menos que el nombre */
-    font-size: clamp(1.3rem, 2.5vw, 1.3rem); /* Más pequeño que el nombre */
+    font-weight: 450; /* Peso medio, menos que el nombre */
+    font-size: clamp(1.3rem, 2vw, 1.3rem); /* Más pequeño que el nombre */
     letter-spacing: -0.01em; /* Mismo espaciado de letras */
     color: rgba(255, 255, 255, 0.918); /* Ligeramente menos opaco que el nombre */
     text-shadow: 0 4px 20px rgba(255, 255, 255, 0.849); /* Misma sombra pero más sutil */
