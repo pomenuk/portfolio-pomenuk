@@ -1171,16 +1171,121 @@ textarea:focus,
   }
 }
 
-/* === ESTADOS DE FOCUS LIMPIOS === */
+/* === CORRECCIONES FINALES PARA EL NAVBAR === */
+
+/* 1. Volver a activar la línea inferior */
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  left: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  transition: var(--transition-normal);
+  transform: translateX(-50%);
+  border-radius: 1px;
+  display: block !important; /* Activar de nuevo la línea */
+}
+
+/* Mostrar línea en hover y active */
+.nav-links a:hover::after,
+.nav-links a.active::after {
+  width: 80%;
+}
+
+/* 2. Línea negra cuando está scrolled */
+.navbar.scrolled .nav-links a::after {
+  background: rgba(0, 0, 0, 0.9) !important; /* Línea negra al hacer scroll */
+}
+
+/* 3. Estados de focus SIN borde verde - transparente */
 .nav-links a:focus {
-  outline: 2px solid var(--accent-color);
+  outline: 2px solid transparent !important; /* Borde transparente */
   outline-offset: 2px;
   background: transparent !important;
   border: none !important;
 }
 
-/* Cuando está scrolled y en focus */
+/* Cuando está scrolled y en focus - también transparente */
 .navbar.scrolled .nav-links a:focus {
-  outline: 2px solid var(--accent-color);
+  outline: 2px solid transparent !important; /* Borde transparente */
   color: rgba(0, 0, 0, 1) !important;
+}
+
+/* === MANTENER EL RESTO DE ESTILOS === */
+
+/* Enlaces del menú - base */
+.nav-links a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.9rem;
+  position: relative;
+  padding: 0.4rem 0.8rem;
+  border-radius: var(--radius-md);
+  transition: var(--transition-normal);
+  letter-spacing: 0.02em;
+  background: transparent !important;
+  border: none !important;
+}
+
+/* Hover y active SIN fondo */
+.nav-links a:hover,
+.nav-links a.active {
+  color: rgba(255, 255, 255, 1);
+  background: transparent !important;
+  border: none !important;
+}
+
+/* Color negro cuando se hace scroll */
+.navbar.scrolled .nav-links a {
+  color: rgba(0, 0, 0, 0.8) !important;
+}
+
+.navbar.scrolled .nav-links a:hover,
+.navbar.scrolled .nav-links a.active {
+  color: rgba(0, 0, 0, 1) !important;
+}
+
+/* Logo también negro al hacer scroll */
+.navbar.scrolled .logo a {
+  color: rgba(0, 0, 0, 0.9) !important;
+  text-shadow: none;
+}
+
+.navbar.scrolled .logo a:hover {
+  color: rgba(0, 0, 0, 1) !important;
+}
+
+/* Burger menu negro al hacer scroll */
+.navbar.scrolled .burger div {
+  background: rgba(0, 0, 0, 0.9) !important;
+}
+
+/* === MÓVIL === */
+@media screen and (max-width: 768px) {
+  /* En móvil NO mostrar línea inferior */
+  .nav-links a::after {
+    display: none !important;
+  }
+  
+  /* Navegación móvil mantiene estilos limpios */
+  .nav-links a {
+    background: transparent !important;
+    border: none !important;
+    color: rgba(255, 255, 255, 0.9) !important;
+  }
+  
+  .nav-links a:hover,
+  .nav-links a.active {
+    background: transparent !important;
+    border: none !important;
+    color: rgba(255, 255, 255, 1) !important;
+  }
+  
+  /* Focus en móvil también transparente */
+  .nav-links a:focus {
+    outline: 2px solid transparent !important;
+  }
 }
