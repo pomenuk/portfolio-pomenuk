@@ -2288,3 +2288,139 @@ textarea:focus,
         gap: var(--space-sm);
     }
 }
+/* === AJUSTES ESPECÍFICOS PARA MÓVIL === */
+
+/* Ajustes para tablets y móviles grandes */
+@media screen and (max-width: 768px) {
+    /* 1. Mover el nombre más arriba en móvil */
+    .tech-name-container {
+        height: 110px; /* Reducir altura para mover el nombre arriba */
+        margin-bottom: var(--space-xl); /* Más espacio después del nombre */
+        margin-top: -var(--space-lg); /* Mover hacia arriba */
+    }
+    
+    /* 2. Aumentar espacio entre slogan y texto typewriter */
+    .modern-text-container {
+        height: 100px; /* Aumentar altura del contenedor */
+        margin-top: var(--space-xl); /* Más espacio arriba del texto */
+        margin-bottom: var(--space-xl);
+    }
+    
+    /* Ajustar nombres en móvil */
+    .names-group {
+        flex-direction: column;
+        gap: var(--space-xs); /* Menos espacio entre nombres en móvil */
+        margin-bottom: var(--space-sm);
+    }
+    
+    /* Slogan más compacto en móvil */
+    .slogan {
+        font-size: clamp(1rem, 4vw, 1.3rem);
+        margin-top: var(--space-xs);
+    }
+}
+
+/* Ajustes para móviles pequeños */
+@media screen and (max-width: 480px) {
+    /* 1. Nombre aún más arriba en móviles pequeños */
+    .tech-name-container {
+        height: 95px; /* Altura más pequeña */
+        margin-bottom: var(--space-2xl); /* Más espacio después */
+        margin-top: -var(--space-xl); /* Mover más arriba */
+    }
+    
+    /* 2. Texto typewriter más separado del slogan */
+    .modern-text-container {
+        height: 120px; /* Más altura para separación */
+        margin-top: var(--space-2xl); /* Mucho más espacio arriba */
+        margin-bottom: var(--space-xl);
+    }
+    
+    /* Hero content más compacto */
+    .hero-content {
+        padding: var(--space-xl) var(--space-md);
+        justify-content: flex-start; /* Alinear hacia arriba */
+        padding-top: calc(var(--space-3xl) + 20px); /* Más padding arriba */
+    }
+    
+    /* Nombres más compactos */
+    .names-group {
+        gap: 0; /* Sin espacio entre nombres */
+        margin-bottom: var(--space-xs);
+    }
+    
+    /* Slogan más pequeño */
+    .slogan {
+        font-size: clamp(0.85rem, 4vw, 1.1rem);
+        margin-top: var(--space-xs);
+        margin-bottom: 0;
+    }
+    
+    /* Texto moderno más pequeño */
+    .modern-text {
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
+    
+    /* Wrapper con mejor espaciado */
+    .name-wrapper {
+        gap: var(--space-xs); /* Menos espacio entre elementos */
+    }
+}
+
+/* Ajustes para móviles extra pequeños */
+@media screen and (max-width: 360px) {
+    /* Nombre muy arriba */
+    .tech-name-container {
+        height: 85px;
+        margin-top: -var(--space-2xl);
+        margin-bottom: var(--space-3xl);
+    }
+    
+    /* Texto typewriter muy separado */
+    .modern-text-container {
+        height: 100px;
+        margin-top: var(--space-3xl);
+    }
+    
+    /* Hero más compacto */
+    .hero-content {
+        padding-top: calc(var(--space-3xl) + 30px);
+    }
+    
+    /* Elementos más pequeños */
+    .slogan {
+        font-size: 0.8rem;
+    }
+    
+    .modern-text {
+        font-size: 0.9rem;
+    }
+}
+
+/* === AJUSTES ADICIONALES PARA MEJOR DISTRIBUCIÓN === */
+
+/* Mejor distribución vertical en móvil */
+@media screen and (max-width: 768px) {
+    /* Contenedor hero con mejor distribución */
+    .hero {
+        padding-top: 60px; /* Espacio para navbar fija */
+    }
+    
+    /* Botones más separados del texto */
+    .cta-buttons {
+        margin-top: var(--space-2xl); /* Más espacio arriba de botones */
+        margin-bottom: var(--space-xl);
+    }
+}
+
+/* Ajuste específico para orientación vertical en móvil */
+@media screen and (max-width: 480px) and (orientation: portrait) {
+    .tech-name-container {
+        margin-top: -var(--space-2xl); /* Más arriba en vertical */
+    }
+    
+    .modern-text-container {
+        margin-top: var(--space-3xl); /* Más separación en vertical */
+    }
+}
