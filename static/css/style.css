@@ -1081,3 +1081,106 @@ textarea:focus,
     margin-top: var(--space-3xl);
   }
 }
+/* === CORRECCIONES PARA EL NAVBAR === */
+
+/* 1. Eliminar TODOS los bordes y líneas de los enlaces del menú */
+.nav-links a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.9rem;
+  position: relative;
+  padding: 0.4rem 0.8rem;
+  border-radius: var(--radius-md);
+  transition: var(--transition-normal);
+  letter-spacing: 0.02em;
+  background: transparent !important;
+  border: none !important; /* Eliminar cualquier borde */
+}
+
+/* Eliminar completamente la línea inferior (::after) */
+.nav-links a::after {
+  display: none !important; /* Ocultar completamente la línea */
+}
+
+/* Hover y active SIN fondo NI líneas */
+.nav-links a:hover,
+.nav-links a.active {
+  color: rgba(255, 255, 255, 1);
+  background: transparent !important;
+  border: none !important;
+  /* Sin línea inferior */
+}
+
+/* 2. Cambiar color de letras a NEGRO cuando se hace scroll */
+.navbar.scrolled .nav-links a {
+  color: rgba(0, 0, 0, 0.8) !important; /* Negro con transparencia */
+}
+
+.navbar.scrolled .nav-links a:hover,
+.navbar.scrolled .nav-links a.active {
+  color: rgba(0, 0, 0, 1) !important; /* Negro completo en hover/active */
+}
+
+/* También cambiar el logo a negro al hacer scroll */
+.navbar.scrolled .logo a {
+  color: rgba(0, 0, 0, 0.9) !important;
+  text-shadow: none; /* Quitar sombra blanca */
+}
+
+.navbar.scrolled .logo a:hover {
+  color: rgba(0, 0, 0, 1) !important;
+}
+
+/* Burger menu también en negro al hacer scroll */
+.navbar.scrolled .burger div {
+  background: rgba(0, 0, 0, 0.9) !important;
+}
+
+/* === AJUSTES PARA MÓVIL === */
+@media screen and (max-width: 768px) {
+  /* Navegación móvil - mantener sin bordes ni líneas */
+  .nav-links a {
+    background: transparent !important;
+    border: none !important;
+  }
+  
+  .nav-links a:hover,
+  .nav-links a.active {
+    background: transparent !important;
+    border: none !important;
+  }
+  
+  /* Eliminar líneas en móvil también */
+  .nav-links a::after {
+    display: none !important;
+  }
+  
+  /* En móvil, el menú desplegable mantiene texto blanco */
+  .nav-links {
+    background: rgba(0, 0, 0, 0.95);
+  }
+  
+  .nav-links a {
+    color: rgba(255, 255, 255, 0.9) !important;
+  }
+  
+  .nav-links a:hover,
+  .nav-links a.active {
+    color: rgba(255, 255, 255, 1) !important;
+  }
+}
+
+/* === ESTADOS DE FOCUS LIMPIOS === */
+.nav-links a:focus {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 2px;
+  background: transparent !important;
+  border: none !important;
+}
+
+/* Cuando está scrolled y en focus */
+.navbar.scrolled .nav-links a:focus {
+  outline: 2px solid var(--accent-color);
+  color: rgba(0, 0, 0, 1) !important;
+}
