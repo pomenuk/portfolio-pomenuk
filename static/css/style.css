@@ -2020,3 +2020,118 @@ textarea:focus,
         letter-spacing: 0.02em;
     }
 }
+/* === ESTILOS ACTUALIZADOS PARA SLOGAN SIN FONDO === */
+
+/* Eliminar todos los estilos del tech-tag ya que se elimina completamente */
+.tech-tag {
+    display: none !important; /* Ocultar completamente el tag FULL-STACK DEV */
+}
+
+/* Contenedor de nombres actualizado */
+.name-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    justify-content: center;
+    gap: var(--space-md); /* Más espacio entre nombre y slogan */
+}
+
+/* Contenedor de nombres - mantiene los nombres juntos */
+.names-group {
+    display: flex;
+    align-items: center;
+    gap: var(--space-lg);
+    justify-content: center;
+    margin-bottom: 0; /* Sin margen bottom ya que usamos gap */
+}
+
+/* Estilos de nombres FIJOS - Manteniendo el tamaño grande */
+.first-name-fixed, 
+.last-name-fixed {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: clamp(2.5rem, 6vw, 3.5rem); /* Tamaño grande mantenido */
+    letter-spacing: -0.02em;
+    color: rgba(255, 255, 255, 0.98);
+    text-shadow: 0 4px 20px rgba(255, 255, 255, 0.5);
+}
+
+/* Contenedor del slogan - posicionado debajo de los nombres */
+.slogan-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 0; /* Sin márgenes adicionales */
+}
+
+/* SLOGAN SIN FONDO - Mismo estilo que el nombre pero más pequeño */
+.slogan {
+    font-family: 'Inter', sans-serif; /* Misma tipografía que el nombre */
+    font-weight: 500; /* Peso medio, menos que el nombre */
+    font-size: clamp(1.2rem, 3vw, 1.8rem); /* Más pequeño que el nombre */
+    letter-spacing: -0.01em; /* Mismo espaciado de letras */
+    color: rgba(255, 255, 255, 0.85); /* Ligeramente menos opaco que el nombre */
+    text-shadow: 0 4px 20px rgba(255, 255, 255, 0.4); /* Misma sombra pero más sutil */
+    text-align: center;
+    
+    /* SIN FONDO - Eliminamos todas las propiedades de fondo */
+    background: none;
+    backdrop-filter: none;
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    
+    /* Sin efectos de hover especiales */
+    transition: var(--transition-normal);
+}
+
+/* Efecto hover muy sutil para el slogan */
+.slogan:hover {
+    color: rgba(255, 255, 255, 0.95); /* Solo cambio de opacidad */
+    transform: translateY(-1px); /* Movimiento muy sutil */
+}
+
+/* Eliminar todos los pseudo-elementos del slogan */
+.slogan::before,
+.slogan::after {
+    display: none;
+}
+
+/* Ajustar la altura del contenedor para acomodar sin el tag */
+.tech-name-container {
+    height: 150px; /* Reducir altura ya que no hay tag */
+    margin-bottom: var(--space-lg);
+}
+
+/* Responsive mejorado */
+@media screen and (max-width: 768px) {
+    .names-group {
+        flex-direction: column;
+        gap: var(--space-sm);
+    }
+    
+    .slogan {
+        font-size: clamp(1rem, 4vw, 1.4rem); /* Mantener proporción en móvil */
+        margin-top: var(--space-sm);
+    }
+    
+    .tech-name-container {
+        height: 130px; /* Ajustar altura en móvil */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .slogan {
+        font-size: clamp(0.9rem, 4vw, 1.2rem);
+        letter-spacing: 0;
+    }
+    
+    .tech-name-container {
+        height: 120px; /* Más compacto en móviles pequeños */
+    }
+    
+    .name-wrapper {
+        gap: var(--space-sm); /* Menos espacio en móvil */
+    }
+}
