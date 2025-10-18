@@ -2100,7 +2100,7 @@ textarea:focus,
 
 /* Ajustar la altura del contenedor para acomodar sin el tag */
 .tech-name-container {
-    height: 150px; /* Reducir altura ya que no hay tag */
+    height: 100px; /* Reducir altura ya que no hay tag */
     margin-bottom: var(--space-lg);
 }
 
