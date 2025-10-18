@@ -429,14 +429,14 @@ section {
   left: 100%;
 }
 .primary-btn {
-  background: rgba(16, 185, 129, 0.25);
-  border-color: rgba(16, 185, 129, 0.5);
+  background: rgba(16, 185, 129, 0);
+  border-color: rgba(16, 185, 129, 0);
 }
 .primary-btn:hover {
   transform: translateY(-2px);
   box-shadow: var(--shadow-lg);
-  background: rgba(16, 185, 129, 0.35);
-  border-color: rgba(16, 185, 129, 0.7);
+  background: rgba(16, 185, 129, 0);
+  border-color: rgba(16, 185, 129, 0);
 }
 .secondary-btn {
   background: transparent;
