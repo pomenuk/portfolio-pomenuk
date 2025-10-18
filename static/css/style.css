@@ -218,7 +218,7 @@ section {
 
 /* Logo imagen ajustado */
 .nav-logo {
-    height: 40px; /* Altura ajustada al menú */
+    height: 50px; /* Altura ajustada al menú */
     width: auto;
     vertical-align: middle;
     transition: var(--transition-normal);
