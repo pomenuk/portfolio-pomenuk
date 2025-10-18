@@ -2072,7 +2072,6 @@ textarea:focus,
     font-size: clamp(1.2rem, 2vw, 1.2rem); /* Más pequeño que el nombre */
     letter-spacing: -0.01em; /* Mismo espaciado de letras */
     color: rgba(255, 255, 255, 0.918); /* Ligeramente menos opaco que el nombre */
-    text-shadow: 0 4px 20px rgba(255, 255, 255, 0.849); /* Misma sombra pero más sutil */
     text-align: center;
     
     /* SIN FONDO - Eliminamos todas las propiedades de fondo */
@@ -2095,7 +2094,7 @@ textarea:focus,
 
 /* Ajustar la altura del contenedor para acomodar sin el tag */
 .tech-name-container {
-    height: 170px; /* Reducir altura ya que no hay tag */
+    height: 190px; /* Reducir altura ya que no hay tag */
     margin-bottom: var(--space-lg);
 }
 
@@ -2136,10 +2135,9 @@ textarea:focus,
 .slogan {
     font-family: 'Inter', sans-serif;
     font-weight: 500;
-    font-size: clamp(1.2rem, 3vw, 1.8rem);
+    font-size: clamp(1.2rem, 2vw, 1.2rem);
     letter-spacing: -0.01em;
-    color: rgba(255, 255, 255, 0.85);
-    text-shadow: 0 4px 20px rgba(255, 255, 255, 0.4);
+    color: rgba(255, 255, 255, 0.959);
     text-align: center;
     transition: var(--transition-normal);
     
