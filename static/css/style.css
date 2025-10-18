@@ -1289,3 +1289,97 @@ textarea:focus,
     outline: 2px solid transparent !important;
   }
 }
+/* === CORRECCIÓN PARA MENÚ HAMBURGUESA EN MÓVIL === */
+
+/* Menú hamburguesa con fondo blanco cuando se hace scroll en móvil */
+@media screen and (max-width: 768px) {
+  /* Cuando se hace scroll, el menú desplegable debe tener fondo blanco */
+  .navbar.scrolled .nav-links {
+    background: rgba(255, 255, 255, 0.95) !important; /* Fondo blanco */
+    backdrop-filter: blur(20px);
+    border-top: 1px solid rgba(0, 0, 0, 0.1); /* Borde negro sutil */
+    box-shadow: var(--shadow-lg);
+  }
+  
+  /* Texto negro en el menú blanco cuando se hace scroll */
+  .navbar.scrolled .nav-links a {
+    color: rgba(0, 0, 0, 0.8) !important; /* Texto negro */
+  }
+  
+  .navbar.scrolled .nav-links a:hover,
+  .navbar.scrolled .nav-links a.active {
+    color: rgba(0, 0, 0, 1) !important; /* Texto negro completo en hover */
+    background: rgba(0, 0, 0, 0.05) !important; /* Fondo gris muy sutil en hover */
+  }
+  
+  /* Burger menu negro cuando se hace scroll (para mejor contraste) */
+  .navbar.scrolled .burger div {
+    background: rgba(0, 0, 0, 0.9) !important;
+  }
+  
+  /* Mantener el menú original (sin scroll) con fondo oscuro */
+  .navbar:not(.scrolled) .nav-links {
+    background: rgba(0, 0, 0, 0.95) !important; /* Fondo oscuro original */
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .navbar:not(.scrolled) .nav-links a {
+    color: rgba(255, 255, 255, 0.9) !important; /* Texto blanco original */
+  }
+  
+  .navbar:not(.scrolled) .nav-links a:hover,
+  .navbar:not(.scrolled) .nav-links a.active {
+    color: rgba(255, 255, 255, 1) !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+  }
+  
+  /* Burger menu blanco en estado normal */
+  .navbar:not(.scrolled) .burger div {
+    background: rgba(255, 255, 255, 0.9) !important;
+  }
+}
+
+/* === ASEGURAR CONSISTENCIA EN ESCRITORIO === */
+
+/* En escritorio mantener el comportamiento actual */
+@media screen and (min-width: 769px) {
+  /* Línea inferior visible en escritorio */
+  .nav-links a::after {
+    display: block !important;
+  }
+  
+  /* Color blanco normal */
+  .nav-links a {
+    color: rgba(255, 255, 255, 0.8);
+  }
+  
+  .nav-links a:hover,
+  .nav-links a.active {
+    color: rgba(255, 255, 255, 1);
+  }
+  
+  /* Color negro cuando se hace scroll en escritorio */
+  .navbar.scrolled .nav-links a {
+    color: rgba(0, 0, 0, 0.8) !important;
+  }
+  
+  .navbar.scrolled .nav-links a:hover,
+  .navbar.scrolled .nav-links a.active {
+    color: rgba(0, 0, 0, 1) !important;
+  }
+  
+  .navbar.scrolled .nav-links a::after {
+    background: rgba(0, 0, 0, 0.9) !important;
+  }
+}
+
+/* === TRANSICIONES SUAVES PARA EL CAMBIO === */
+@media screen and (max-width: 768px) {
+  .nav-links {
+    transition: background-color 0.3s ease, border-color 0.3s ease !important;
+  }
+  
+  .nav-links a {
+    transition: color 0.3s ease, background-color 0.2s ease !important;
+  }
+}
